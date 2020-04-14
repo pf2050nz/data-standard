@@ -1,0 +1,98 @@
+{
+	"pf2050_data_standard" : {
+        "system" : {
+            "system_id" : "",
+            "name" : "",
+            "data_standard_version" : ""
+        },
+        "reported_by" : {
+            "name" : ""
+        },
+		"report" : [
+            {
+                "report_id" : "",
+                "report_type" : "",
+                "date_recorded" : {
+                    "date_start" : "",
+                    "date_end" : ""
+                },
+                "location" : {
+                    "area" : [
+                        {
+                            "point" : {
+                                "latitude_wgs84" : "",
+                                "longitude_wgs84" : ""
+                            }
+                        },
+                        {
+                            "point" : {
+                                "latitude_wgs84" : "",
+                                "longitude_wgs84" : ""
+                            }
+                        },
+                        {
+                            "point" : {
+                                "latitude_wgs84" : "",
+                                "longitude_wgs84" : ""
+                            }
+                        },
+                        {
+                            "point" : {
+                                "latitude_wgs84" : "",
+                                "longitude_wgs84" : ""
+                            }
+                        }
+                    ]
+                },
+                "device" : {
+                    "device_id" : "",
+                    "device_type" : "",
+                    "device_model" : "",
+                    "device_statuses" : {
+                        "arrival" : "",
+                        "departure" : "",
+                        "trigger_count" : ""
+                    },
+                    "lure" : {
+                        "lure_id" : "",
+                        "lure_type" : "",
+                        "lure_statuses" : {
+                            "arrival" : "",
+                            "departure" : "",
+                            "grams_remaining" : "",
+                            "grams_taken" : "",
+                            "grams_added" : "",
+                            "grams_removed" : ""
+                        }
+                    },
+                    "bait" : {
+                        "bait_id" : "",
+                        "bait_type" : "",
+                        "bait_statuses" : {
+                            "arrival" : "",
+                            "departure" : "",
+                            "grams_added" : "",
+                            "grams_removed" : ""
+                        }
+                    }
+                },
+                "catch" : {
+                    "species" : [
+                        {
+                            "species_id" : "",
+                            "common_name" : "",
+                            "scientific_name" : "",
+                            "age" : "",
+                            "sex" : "",
+                            "count" : "",
+                            "target" : ""
+                        }
+                    ]
+                },
+                "reported_by" : {
+                    "name" : ""
+                }
+            }
+        ]
+	}
+}

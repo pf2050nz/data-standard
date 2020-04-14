@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<pf2050_data_standard xmlns="https://pf2050.co.nz" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://pf2050.co.nz file:///C:/Dev/data-standard/pf2050_data_standard.xsd">
+	<system>
+        <system_id>152e11ac-b9fa-11e8-8d80-0220ed3bca7a</system_id>
+        <name>Some System</name>
+        <data_standard_version>0.2</data_standard_version>
+    </system>
+    <reported_by>
+        <name>Forest &amp; Bird Central Lakes Branch</name>
+    </reported_by>
+    <report>
+		<report_id>252e11ac-b9fa-11e8-8d80-0220ed3bca7a</report_id>
+		<report_type>Visit</report_type>
+		<date_recorded>
+            <date>2019-06-05T14:10:15Z</date>
+		</date_recorded>
+		<location>
+            <point>
+                <latitude_wgs84>35.12345</latitude_wgs84>
+                <longitude_wgs84>-175.12345</longitude_wgs84>
+            </point>
+		</location>
+		<device>
+            <device_id>352e11ac-b9fa-11e8-8d80-0220ed3bca7a</device_id>
+			<device_type>Trap</device_type>
+			<device_model>DOC200</device_model>
+			<device_statuses>
+				<arrival>Triggered</arrival>
+				<departure>Set</departure>
+			</device_statuses>
+			<bait>
+                <bait_id>456</bait_id>
+				<bait_type>Brodaficoum</bait_type>
+				<bait_statuses>
+					<arrival>Gone</arrival>
+                    <departure>Replaced</departure>
+                    <grams_taken>28</grams_taken>
+                    <grams_added>28</grams_added>
+				</bait_statuses>
+			</bait>
+		</device>
+		<catch>
+			<species>
+                <species_id>789</species_id>
+				<common_name>Rat</common_name>
+				<age>Unknown</age>
+				<sex>Unknown</sex>
+                <count>1</count>
+                <target>true</target>
+			</species>
+		</catch>
+        <reported_by>
+            <name>Geoff</name>
+        </reported_by>
+	</report>
+</pf2050_data_standard>

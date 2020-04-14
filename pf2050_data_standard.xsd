@@ -1,0 +1,391 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="https://pf2050.co.nz" targetNamespace="https://pf2050.co.nz" version="0.3">
+
+<xs:annotation>
+    <xs:appinfo>pf2050_data_standard.xsd v0.3</xs:appinfo>
+    <xs:documentation xml:lang="en">New Zealand Predator Free 2050 Data Standard.</xs:documentation>
+</xs:annotation>
+
+<xs:simpleType name="guid">
+	<xs:restriction base="xs:string">
+		<xs:pattern value="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}" />
+	</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="report_type">
+	<xs:annotation>
+		<xs:documentation>
+			Defines the human or machine activity that originated the data.
+			Data is candidate for centralised cloud storage accessible via API.
+            The list included here for demonstration and discussion purposes only.
+		</xs:documentation>
+	</xs:annotation>
+	<xs:restriction base="xs:string">
+		<xs:enumeration value="Catch" />
+		<xs:enumeration value="Visit" />
+		<xs:enumeration value="Deployment" />
+		<xs:enumeration value="Decommission" />
+        <xs:enumeration value="Sensor Trigger" />
+        <xs:enumeration value="Sensor Report" />
+	</xs:restriction>
+</xs:simpleType>
+
+<xs:complexType name="date_type">
+	<xs:annotation>
+		<xs:documentation>
+            Defines the date the report data was captured or or date range the data capture covers/spans.
+		</xs:documentation>
+    </xs:annotation>
+    <xs:choice>
+        <xs:element name="date" type="xs:dateTime" />
+        <xs:sequence>
+            <xs:element name="date_start" type="xs:dateTime" />
+            <xs:element name="date_end" type="xs:dateTime" />
+        </xs:sequence>
+    </xs:choice>
+</xs:complexType>
+
+<xs:simpleType name="device_type">
+	<xs:annotation>
+		<xs:documentation>
+			Defines the broad class of device used to catch, monitor or sense predators.
+			Data is candidate for centralised cloud storage accessible via API.
+            The list included here for demonstration and discussion purposes only.
+		</xs:documentation>
+	</xs:annotation>
+	<xs:restriction base="xs:string">
+		<xs:enumeration value="Trap" />
+		<xs:enumeration value="Bait Station" />
+		<xs:enumeration value="Sensor" />
+	</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="device_model">
+	<xs:annotation>
+		<xs:documentation>
+			Defines the specific model of device used to catch, monitor or sense predators.
+            Data is candidate for centralised cloud storage accessible via API.
+            The list included here for demonstration and discussion purposes only.
+		</xs:documentation>
+	</xs:annotation>
+	<xs:restriction base="xs:string">
+		<xs:enumeration value="DOC 200" />
+		<xs:enumeration value="Timms" />
+		<xs:enumeration value="Goodnature A24" />
+	</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="device_status">
+	<xs:annotation>
+		<xs:documentation>
+			Defines the state of a device use to catch, monitor or sense predators.
+            Data is candidate for centralised cloud storage accessible via API.
+            The list included here for demonstration and discussion purposes only.
+		</xs:documentation>
+	</xs:annotation>
+	<xs:restriction base="xs:string">
+		<xs:enumeration value="Set" />
+		<xs:enumeration value="Not Set" />
+		<xs:enumeration value="Triggered" />
+	</xs:restriction>
+</xs:simpleType>
+
+<xs:complexType name="device_statuses">
+	<xs:annotation>
+		<xs:documentation>
+			Defines the state of a device ue to catch, monitor or sense predators.
+		</xs:documentation>
+	</xs:annotation>
+	<xs:sequence>
+		<xs:element name="arrival" type="device_status" minOccurs="0" />
+		<xs:element name="departure" type="device_status" minOccurs="0" />
+		<xs:element name="trigger_count" type="xs:integer" minOccurs="0" />
+	</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="device">
+	<xs:annotation>
+		<xs:documentation>
+			Defines a device used to catch, monitor or sense predators.
+		</xs:documentation>
+	</xs:annotation>
+	<xs:sequence>
+		<xs:element name="device_id" type="guid" />
+		<xs:element name="device_type" type="device_type" />
+		<xs:element name="device_model" type="device_model" />
+		<xs:element name="device_statuses" type="device_statuses" minOccurs="0" />
+		<xs:element name="lure" type="lure" minOccurs="0" />
+		<xs:element name="bait" type="bait" minOccurs="0" />
+	</xs:sequence>
+</xs:complexType>
+
+<xs:simpleType name="lure_status">
+	<xs:annotation>
+		<xs:documentation>
+			Defines the state of a non-toxic substance use to catch, monitor or sense predators.
+            Data is candidate for centralised cloud storage accessible via API.
+            The list included here for demonstration and discussion purposes only.
+		</xs:documentation>
+	</xs:annotation>
+	<xs:restriction base="xs:string">
+		<xs:enumeration value="None" />
+		<xs:enumeration value="Gone" />
+		<xs:enumeration value="Bad" />
+		<xs:enumeration value="Replaced" />
+		<xs:enumeration value="Refreshed" />
+	</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="lure_type">
+	<xs:annotation>
+		<xs:documentation>
+			Defines the class of non-toxic substance used to catch, monitor or sense predators.
+            Data is candidate for centralised cloud storage accessible via API.
+            The list included here for demonstration and discussion purposes only.
+		</xs:documentation>
+	</xs:annotation>
+	<xs:restriction base="xs:string">
+		<xs:enumeration value="None" />
+		<xs:enumeration value="Egg" />
+	</xs:restriction>
+</xs:simpleType>
+
+<xs:complexType name="lure">
+	<xs:annotation>
+		<xs:documentation>
+			Defines a non-toxic substance used to catch, monitor or sense predators.
+		</xs:documentation>
+	</xs:annotation>
+	<xs:sequence>
+		<xs:element name="lure_id" type="xs:positiveInteger" />
+		<xs:element name="lure_type" type="lure_type" />
+		<xs:element name="lure_statuses" type="bait_lure_statuses" minOccurs="0" />
+	</xs:sequence>
+</xs:complexType>
+
+<xs:simpleType name="bait_status">
+	<xs:annotation>
+		<xs:documentation>
+			Defines the state of toxin use to catch, monitor or sense predators.
+            Data is candidate for centralised cloud storage accessible via API.
+            The list included here for demonstration and discussion purposes only.
+		</xs:documentation>
+	</xs:annotation>
+	<xs:restriction base="xs:string">
+		<xs:enumeration value="None" />
+		<xs:enumeration value="Gone" />
+		<xs:enumeration value="Bad" />
+		<xs:enumeration value="Replaced" />
+		<xs:enumeration value="Refreshed" />
+	</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="bait_type">
+	<xs:annotation>
+		<xs:documentation>
+			Defines the class of toxin used to catch, monitor or sense predators.
+            Data is candidate for centralised cloud storage accessible via API.
+            The list included here for demonstration and discussion purposes only.
+		</xs:documentation>
+	</xs:annotation>
+	<xs:restriction base="xs:string">
+		<xs:enumeration value="None" />
+		<xs:enumeration value="Brodifacoum" />
+	</xs:restriction>
+</xs:simpleType>
+
+<xs:complexType name="bait">
+	<xs:annotation>
+		<xs:documentation>
+			Defines a toxin used to catch, monitor or sense predators.
+		</xs:documentation>
+	</xs:annotation>
+	<xs:sequence>
+		<xs:element name="bait_id" type="xs:positiveInteger" />
+		<xs:element name="bait_type" type="bait_type" />
+		<xs:element name="bait_statuses" type="bait_lure_statuses" minOccurs="0" />
+	</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="bait_lure_statuses">
+	<xs:sequence>
+		<xs:element name="arrival" type="bait_status" minOccurs="0" />
+        <xs:element name="departure" type="bait_status" minOccurs="0" />
+        <xs:element name="grams_remaining" type="xs:positiveInteger" minOccurs="0" />
+        <xs:element name="grams_added" type="xs:positiveInteger" minOccurs="0" />
+        <xs:element name="grams_removed" type="xs:positiveInteger" minOccurs="0" />
+        <xs:element name="grams_taken" type="xs:positiveInteger" minOccurs="0"/>
+	</xs:sequence>
+</xs:complexType>
+
+<xs:simpleType name="latitude_wgs84">
+	<xs:restriction base="xs:decimal">
+		<xs:minInclusive value="-90.0" />
+		<xs:maxInclusive value="90.0" />
+	</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="longitude_wgs84">
+	<xs:restriction base="xs:decimal">
+		<xs:minInclusive value="-180.0" />
+		<xs:maxInclusive value="180.0" />
+	</xs:restriction>
+</xs:simpleType>
+
+<xs:complexType name="coordinate">
+    <xs:annotation>
+		<xs:documentation>
+            Latitude and Longitude to use WGS 84 standard.
+		</xs:documentation>
+	</xs:annotation>
+	<xs:sequence>
+		<xs:element name="latitude" type="latitude_wgs84" />
+		<xs:element name="longitude" type="longitude_wgs84" />
+	</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="area">
+    <xs:annotation>
+		<xs:documentation>
+            An area is defined by four or more coordinate type elements, with linear interpolation between them; the first and last coordinates must be coincident.
+            Refer http://schemas.opengis.net/gml/2.1.2/geometry.xsd
+		</xs:documentation>
+	</xs:annotation>
+	<xs:sequence>
+		<xs:element name="point" type="coordinate" minOccurs="4" maxOccurs="unbounded" />
+	</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="location">
+    <xs:annotation>
+		<xs:documentation>
+            Position or area where the report took place.
+            The point element used to define a solitary position.
+            The area element used to define an area of interest.
+		</xs:documentation>
+    </xs:annotation>
+    <xs:choice>
+        <xs:element name="point" type="coordinate" />
+        <xs:element name="area" type="area" />
+    </xs:choice>
+</xs:complexType>
+
+<xs:simpleType name="species_common_name">
+	<xs:annotation>
+		<xs:documentation>
+            Full list defined at ...
+            Only a subset list is defined here for demonstration and discussion purposes.
+            This data is candidate for centralised storage accessed via API.
+		</xs:documentation>
+	</xs:annotation>
+	<xs:restriction base = "xs:string">
+		<xs:enumeration value="Unknown" />
+		<xs:enumeration value="Rat" />
+		<xs:enumeration value="Cat" />
+	</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="species_age">
+	<xs:restriction base="xs:string">
+		<xs:enumeration value="Unknown" />
+		<xs:enumeration value="Baby" />
+		<xs:enumeration value="Juvenile" />
+		<xs:enumeration value="Adult" />
+	</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="species_sex">
+	<xs:restriction base="xs:string">
+		<xs:enumeration value="Unknown" />
+		<xs:enumeration value="Male" />
+		<xs:enumeration value="Female" />
+	</xs:restriction>
+</xs:simpleType>
+
+<xs:complexType name="catch">
+	<xs:annotation>
+		<xs:documentation>
+			Defines the result of a devices' catch, monitor or sense action.
+		</xs:documentation>
+	</xs:annotation>
+	<xs:sequence>
+		<xs:element name="species" type="species" />
+	</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="species">
+	<xs:annotation>
+		<xs:documentation>
+			Defines the animal detected, caught or sensed by a device.
+		</xs:documentation>
+	</xs:annotation>
+	<xs:sequence>
+		<xs:element name="species_id" type="xs:positiveInteger" />
+		<xs:element name="common_name" type="species_common_name" />
+		<xs:element name="scientific_name" type="xs:string" minOccurs="0" />
+		<xs:element name="age" type="species_age" minOccurs="0" />
+		<xs:element name="sex" type="species_sex" minOccurs="0" />
+        <xs:element name="count" type="xs:positiveInteger" minOccurs="0" />
+        <xs:element name="target" type="xs:boolean" minOccurs="0" default="true" />
+	</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="reporter">
+	<xs:annotation>
+		<xs:documentation>
+            Defines the person or subsystem that generated the specific report data.
+            This element type can be used at the file (pf2050_data_standard element) level, or as child element of the report element.
+            When used as a child element of report, all optional elements should be omitted.
+		</xs:documentation>
+	</xs:annotation>
+	<xs:sequence>
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="project_name" type="xs:string" minOccurs="0" />
+        <xs:element name="website_url" type="xs:string" minOccurs="0" />
+        <xs:element name="contact_name" type="xs:string" minOccurs="0" />
+        <xs:element name="contact_phone" type="xs:string" minOccurs="0" />
+        <xs:element name="contact_email" type="xs:string" minOccurs="0" />
+	</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="system">
+	<xs:annotation>
+		<xs:documentation>
+			Defines the system that generated the dataset.
+		</xs:documentation>
+	</xs:annotation>
+	<xs:sequence>
+		<xs:element name="system_id" type="guid" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="data_standard_version" />
+	</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="report">
+	<xs:sequence>
+		<xs:element name="report_id" type="guid" />
+		<xs:element name="type" type="report_type" />
+		<xs:element name="date_recorded" type="date_type" />
+		<xs:element name="location" type="location" />
+		<xs:element name="device" type="device" minOccurs="0" />
+		<xs:element name="catch" type="catch" minOccurs="0" />
+		<xs:element name="reported_by" type="reporter" minOccurs="0" />
+	</xs:sequence>
+</xs:complexType>
+
+<xs:element name="pf2050_data_standard">
+    <xs:annotation>
+		<xs:documentation>
+			New Zealand Predator Free 2050 Data Standard.
+		</xs:documentation>
+	</xs:annotation>
+	<xs:complexType>
+		<xs:sequence>
+            <xs:element name="system" type="system" />
+            <xs:element name="reported_by" type="reporter" minOccurs="0" />
+			<xs:element name="report" type="report" />
+		</xs:sequence>
+	</xs:complexType>
+</xs:element>
+
+</xs:schema>
