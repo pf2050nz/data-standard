@@ -15,12 +15,7 @@
                 "date_recorded" : {
                     "date" : "2019-06-05T14:10:15Z"
                 },
-                "location" : {
-                    "point" : {
-                        "latitude_wgs84" : 35.123456,
-                        "longitude_wgs84" : -175.123456
-                    }
-                },
+                "location" : "POINT(-175.123456 35.123456)",
                 "device" : {
                     "device_id" : 123,
                     "device_type" : "Trap",
@@ -35,23 +30,23 @@
                         "bait_statuses" : {
                             "arrival" : "Gone",
                             "departure" : "Replaced",
-                            "grams_taken" : 28,
-                            "grams_added" : 28
+                            "amount" : {
+                                "grams_taken" : 28,
+                                "grams_added" : 28
+                            }
                         }
                     }
                 },
-                "catch" : {
-                    "species" : [
-                        {
-                            "species_id" : 789,
-                            "common_name" : "Rat",
-                            "age" : "Unknown",
-                            "sex" : "Unknown",
-                            "count" : 1,
-                            "target" : true
-                        }
-                    ]
-                },
+                "species" : [
+                    {
+                        "species_id" : 789,
+                        "common_name" : "Rat",
+                        "age" : "Unknown",
+                        "sex" : "Unknown",
+                        "count" : 1,
+                        "target" : true
+                    }
+                ],
                 "reported_by" : {
                     "name" : "Geoff"
                 }

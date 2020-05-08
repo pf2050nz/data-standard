@@ -15,12 +15,7 @@
 		<date_recorded>
             <date></date>
 		</date_recorded>
-		<location>
-            <point>
-                <latitude_wgs84></latitude_wgs84>
-                <longitude_wgs84></longitude_wgs84>
-            </point>
-		</location>
+		<location></location>
 		<device>
             <device_id></device_id>
 			<device_type></device_type>
@@ -36,10 +31,12 @@
                 <lure_statuses>
 					<arrival></arrival>
                     <departure></departure>
-                    <grams_remaining></grams_remaining>
-                    <grams_taken></grams_taken>
-                    <grams_added></grams_added>
-                    <grams_removed></grams_removed>
+                    <amount>
+                        <grams_remaining></grams_remaining>
+                        <grams_taken></grams_taken>
+                        <grams_added></grams_added>
+                        <grams_removed></grams_removed>
+                    </amount>
 				</lure_statuses>
 			</lure>
 			<bait>
@@ -48,24 +45,24 @@
 				<bait_statuses>
 					<arrival></arrival>
                     <departure></departure>
-                    <grams_remaining></grams_remaining>
-                    <grams_taken></grams_taken>
-                    <grams_added></grams_added>
-                    <grams_removed></grams_removed>
+                    <amount>
+                        <grams_remaining></grams_remaining>
+                        <grams_taken></grams_taken>
+                        <grams_added></grams_added>
+                        <grams_removed></grams_removed>
+                    </amount>
 				</bait_statuses>
 			</bait>
 		</device>
-		<catch>
-			<species>
-                <species_id></species_id>
-                <common_name></common_name>
-                <scientific_name></scientific_name>
-				<age></age>
-				<sex></sex>
-                <count></count>
-                <target></target>
-			</species>
-		</catch>
+        <species>
+            <species_id></species_id>
+            <common_name></common_name>
+            <scientific_name></scientific_name>
+            <age></age>
+            <sex></sex>
+            <count></count>
+            <target></target>
+        </species>
         <reported_by>
             <name></name>
         </reported_by>

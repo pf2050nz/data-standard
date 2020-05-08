@@ -15,12 +15,7 @@
                 "date_recorded" : {
                     "date" : ""
                 },
-                "location" : {
-                    "point" : {
-                        "latitude_wgs84" : "",
-                        "longitude_wgs84" : ""
-                    }
-                },
+                "location" : "",
                 "device" : {
                     "device_id" : "",
                     "device_type" : "",
@@ -36,10 +31,12 @@
                         "lure_statuses" : {
                             "arrival" : "",
                             "departure" : "",
-                            "grams_remaining" : "",
-                            "grams_taken" : "",
-                            "grams_added" : "",
-                            "grams_removed" : ""
+                            "amount" : {
+                                "grams_remaining" : "",
+                                "grams_taken" : "",
+                                "grams_added" : "",
+                                "grams_removed" : ""
+                            }
                         }
                     },
                     "bait" : {
@@ -48,24 +45,26 @@
                         "bait_statuses" : {
                             "arrival" : "",
                             "departure" : "",
-                            "grams_added" : "",
-                            "grams_removed" : ""
+                            "amount" : {
+                                "grams_remaining" : "",
+                                "grams_taken" : "",
+                                "grams_added" : "",
+                                "grams_removed" : ""
+                            }
                         }
                     }
                 },
-                "catch" : {
-                    "species" : [
-                        {
-                            "species_id" : "",
-                            "common_name" : "",
-                            "scientific_name" : "",
-                            "age" : "",
-                            "sex" : "",
-                            "count" : "",
-                            "target": ""
-                        }
-                    ]
-                },
+                "species" : [
+                    {
+                        "species_id" : "",
+                        "common_name" : "",
+                        "scientific_name" : "",
+                        "age" : "",
+                        "sex" : "",
+                        "count" : "",
+                        "target": ""
+                    }
+                ],
                 "reported_by" : {
                     "name" : ""
                 }
