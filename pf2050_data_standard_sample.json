@@ -3,7 +3,7 @@
         "system" : {
             "system_id" : "152e11ac-b9fa-11e8-8d80-0220ed3bca7a",
             "name" : "Some System",
-            "data_standard_version" : "0.2"
+            "data_standard_version" : "0.4"
         },
         "reported_by" : {
             "name" : "Forest & Bird Central Lakes Branch"
@@ -17,7 +17,7 @@
                 },
                 "location" : "POINT(-175.123456 35.123456)",
                 "device" : {
-                    "device_id" : 123,
+                    "device_id" : "352e11ac-b9fa-11e8-8d80-0220ed3bca7a",
                     "device_type" : "Trap",
                     "device_model" : "DOC200",
                     "device_statuses" : {

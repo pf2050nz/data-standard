@@ -3,7 +3,7 @@
 	<system>
         <system_id>152e11ac-b9fa-11e8-8d80-0220ed3bca7a</system_id>
         <name>Some System</name>
-        <data_standard_version>0.2</data_standard_version>
+        <data_standard_version>0.4</data_standard_version>
     </system>
     <reported_by>
         <name>Forest &amp; Bird Central Lakes Branch</name>
@@ -14,7 +14,7 @@
 		<date_recorded>
             <date>2019-06-05T14:10:15Z</date>
 		</date_recorded>
-		<location>POINT(-175.12345 35.12345)</location>
+		<location>POINT(-175.123456 35.123456)</location>
 		<device>
             <device_id>352e11ac-b9fa-11e8-8d80-0220ed3bca7a</device_id>
 			<device_type>Trap</device_type>
