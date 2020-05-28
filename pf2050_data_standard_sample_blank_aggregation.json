@@ -1,60 +1,45 @@
 {
 	"pf2050_data_standard" : {
         "system" : {
-            "system_id" : "",
+            "system_uuid" : "",
             "name" : "",
             "data_standard_version" : ""
         },
         "reported_by" : {
+            "reporter_uuid" : "",
             "name" : ""
         },
 		"report" : [
             {
-                "report_id" : "",
+                "report_uuid" : "",
                 "report_type" : "",
                 "date_recorded" : {
                     "date_start" : "",
                     "date_end" : ""
                 },
                 "location" : "",
-                "device" : {
-                    "device_id" : "",
-                    "device_type" : "",
-                    "device_model" : "",
-                    "device_statuses" : {
-                        "arrival" : "",
-                        "departure" : "",
-                        "trigger_count" : ""
-                    },
-                    "lure" : {
-                        "lure_id" : "",
-                        "lure_type" : "",
-                        "lure_statuses" : {
-                            "arrival" : "",
-                            "departure" : "",
-                            "amount" : {
-                                "grams_remaining" : "",
-                                "grams_taken" : "",
-                                "grams_added" : "",
-                                "grams_removed" : ""
+                "device" : [
+                    {
+                        "device_uuid" : "",
+                        "device_type" : "",
+                        "device_model" : "",
+                        "device_status" : [
+                            { "status_type" : "", "status_term" : "" },
+                            { "status_type" : "", "status_value" : "" }
+                        ],
+                        "substance" : [
+                            {
+                                "substance_type" : "",
+                                "substance_id" : "",
+                                "substance_name" : "",
+                                "substance_status" : [
+                                    { "status_type" : "", "status_term" : "" },
+                                    { "status_type" : "", "status_value" : "" }
+                                ]
                             }
-                        }
-                    },
-                    "bait" : {
-                        "bait_id" : "",
-                        "bait_type" : "",
-                        "bait_statuses" : {
-                            "arrival" : "",
-                            "departure" : "",
-                            "amount" : {
-                                "grams_remaining" : "",
-                                "grams_taken" : "",
-                                "grams_added" : "",
-                                "grams_removed" : ""
-                            }
-                        }
+                        ]
                     }
-                },
+                ],
                 "species" : [
                     {
                         "species_id" : "",
@@ -67,6 +52,7 @@
                     }
                 ],
                 "reported_by" : {
+                    "reporter_uuid" : "",
                     "name" : ""
                 }
             }

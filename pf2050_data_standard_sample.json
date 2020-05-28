@@ -1,42 +1,46 @@
 {
 	"pf2050_data_standard" : {
         "system" : {
-            "system_id" : "152e11ac-b9fa-11e8-8d80-0220ed3bca7a",
+            "system_uuid" : "152e11ac-b9fa-11e8-8d80-0220ed3bca7a",
             "name" : "Some System",
-            "data_standard_version" : "0.4"
+            "data_standard_version" : "0.5"
         },
         "reported_by" : {
+            "reporter_uuid" : "a52e11ac-b9fa-11e8-8d80-0220ed3bca7a",
             "name" : "Forest & Bird Central Lakes Branch"
         },
 		"report" : [
             {
-                "report_id" : "252e11ac-b9fa-11e8-8d80-0220ed3bca7a",
+                "report_uuid" : "252e11ac-b9fa-11e8-8d80-0220ed3bca7a",
                 "report_type" : "Visit",
                 "date_recorded" : {
                     "date" : "2019-06-05T14:10:15Z"
                 },
                 "location" : "POINT(-175.123456 35.123456)",
-                "device" : {
-                    "device_id" : "352e11ac-b9fa-11e8-8d80-0220ed3bca7a",
-                    "device_type" : "Trap",
-                    "device_model" : "DOC200",
-                    "device_statuses" : {
-                        "arrival" : "Triggered",
-                        "departure" : "Set"
-                    },
-                    "bait" : {
-                        "bait_id" : 456,
-                        "bait_type" : "Brodaficoum",
-                        "bait_statuses" : {
-                            "arrival" : "Gone",
-                            "departure" : "Replaced",
-                            "amount" : {
-                                "grams_taken" : 28,
-                                "grams_added" : 28
+                "device" : [
+                    {
+                        "device_id" : "352e11ac-b9fa-11e8-8d80-0220ed3bca7a",
+                        "device_type" : "Trap",
+                        "device_model" : "DOC200",
+                        "device_status" : [
+                            { "status_type" : "Arrival", "status_term" : "Triggered" },
+                            { "status_type" : "Departure", "status_term" : "Set" }
+                        ],
+                        "substance" : [
+                            {
+                                "substance_type" : "Bait",
+                                "substance_id" : "456",
+                                "substance_name" : "Brodaficoum",
+                                "substance_status" : [
+                                    { "status_type" : "Arrival", "status_term" : "Gone" },
+                                    { "status_type" : "Departure", "status_term" : "Replaced" },
+                                    { "status_type" : "Grams Taken", "status_value" : "28" },
+                                    { "status_type" : "Grams Added", "status_value" : "28" }
+                                ]
                             }
-                        }
+                        ]
                     }
-                },
+                ],
                 "species" : [
                     {
                         "species_id" : 789,
@@ -48,6 +52,7 @@
                     }
                 ],
                 "reported_by" : {
+                    "reporter_uuid" : "e52e11ac-b9fa-11e8-8d80-0220ed3bca7a",
                     "name" : "Geoff"
                 }
             }

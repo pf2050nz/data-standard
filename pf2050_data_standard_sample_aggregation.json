@@ -1,0 +1,56 @@
+{
+	"pf2050_data_standard" : {
+        "system" : {
+            "system_uuid" : "a4fF5Fb3-9B8b-a9e1-aE66-4cacaDE2D193",
+            "name" : "Some System",
+            "data_standard_version" : "0.5"
+        },
+        "reported_by" : {
+            "reporter_uuid" : "a52e11ac-b9fa-11e8-8d80-0220ed3bca7a",
+            "name" : "Forest & Bird Central Lakes Branch"
+        },
+		"report" : [
+            {
+                "report_uuid" : "C67d1bEF-DbCe-DB87-4DfB-90eb9d65D8F2",
+                "report_type" : "Catch",
+                "date_recorded" : {
+                    "date_start" : "2020-02-01T00:00:00Z",
+                    "date_end" : "2020-02-29T23:59:59Z"
+                },
+                "location" : "POLYGON(-109.0 -85.6, -109.0 -84.6, -110.0 -84.6, -109.0 -85.6)",
+                "device" : [
+                    {
+                        "device_uuid" : "352e11ac-b9fa-11e8-8d80-0220ed3bca7a",
+                        "device_type" : "Trap",
+                        "device_model" : "DOC200",
+                        "substance" : [
+                            {
+                                "substance_type" : "Bait",
+                                "substance_id" : "456",
+                                "substance_name" : "Brodaficoum",
+                                "substance_status" : [
+                                    { "status_type" : "Grams Added", "status_value" : "2800" },
+                                    { "status_type" : "Grams Removed", "status_value" : "1400" }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "species" : [
+                    {
+                        "species_id" : "789",
+                        "common_name" : "Rat",
+                        "count" : "56",
+                        "target" : "true"
+                    },
+                    {
+                        "species_id" : "123",
+                        "common_name" : "Ferret",
+                        "count" : "17",
+                        "target" : "true"
+                    }
+                ]
+            }
+        ]
+	}
+}
