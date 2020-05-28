@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="https://pf2050.co.nz" targetNamespace="https://pf2050.co.nz" version="0.4">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="https://pf2050.co.nz" targetNamespace="https://pf2050.co.nz" version="0.5">
 
 <xs:annotation>
-    <xs:appinfo>pf2050_data_standard.xsd v0.4</xs:appinfo>
+    <xs:appinfo>pf2050_data_standard.xsd v0.5</xs:appinfo>
     <xs:documentation xml:lang="en">New Zealand Predator Free 2050 Data Standard.</xs:documentation>
 </xs:annotation>
 
