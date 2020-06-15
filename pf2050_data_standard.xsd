@@ -238,7 +238,7 @@
                                                 <xs:element name="status_type" type="device_status_type" minOccurs="1" maxOccurs="1" />
                                                 <xs:element name="status_value" minOccurs="1" maxOccurs="1">
                                                     <xs:simpleType>
-                                                        <xs:union>
+                                                        <xs:union memberTypes="xs:integer xs:string">
                                                             <xs:simpleType>
                                                                 <xs:restriction base="xs:integer"/>
                                                             </xs:simpleType>
@@ -294,7 +294,7 @@
                                                             <xs:element name="status_type" type="substance_status_type" minOccurs="1" maxOccurs="1" />
                                                             <xs:element name="status_value" minOccurs="1" maxOccurs="1">
                                                                 <xs:simpleType>
-                                                                    <xs:union>
+                                                                    <xs:union memberTypes="xs:integer xs:string">
                                                                         <xs:simpleType>
                                                                             <xs:restriction base="xs:integer"/>
                                                                         </xs:simpleType>

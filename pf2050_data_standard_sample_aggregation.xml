@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<pf2050_data_standard xmlns="https://pf2050.co.nz" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://pf2050.co.nz file:///C:/Dev/data-standard/pf2050_data_standard.xsd">
+<ns:pf2050_data_standard xmlns:ns="https://pf2050.co.nz" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://pf2050.co.nz file:///C:/Dev/data-standard/pf2050_data_standard.xsd">
 	<system>
         <system_uuid>a4fF5Fb3-9B8b-a9e1-aE66-4cacaDE2D193</system_uuid>
         <system_name>Some System</system_name>
@@ -40,4 +40,4 @@
             <target>true</target>
         </species>
     </report>
-</pf2050_data_standard>
+</ns:pf2050_data_standard>

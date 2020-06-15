@@ -1,6 +1,6 @@
-<?xml version="1.0"?>
-<pf2050_data_standard xmlns="https://pf2050.co.nz" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://pf2050.co.nz file:///C:/Dev/data-standard/pf2050_data_standard.xsd">
-	<system>
+﻿<?xml version="1.0"?>
+<ns:pf2050_data_standard xmlns:ns="https://pf2050.co.nz" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://pf2050.co.nz file:///C:/Dev/data-standard/pf2050_data_standard.xsd">
+    <system>
         <system_uuid>152e11ac-b9fa-11e8-8d80-0220ed3bca7a</system_uuid>
         <system_name>Some System</system_name>
         <data_standard_version>0.6</data_standard_version>
@@ -53,4 +53,4 @@
         </species>
 		<person_uuid>e52e11ac-b9fa-11e8-8d80-0220ed3bca7a</person_uuid>
 	</report>
-</pf2050_data_standard>
+</ns:pf2050_data_standard>
