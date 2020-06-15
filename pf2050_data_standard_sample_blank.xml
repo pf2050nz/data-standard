@@ -2,25 +2,28 @@
 <pf2050_data_standard xmlns="https://pf2050.co.nz" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://pf2050.co.nz file:///C:/Dev/data-standard/pf2050_data_standard.xsd">
 	<system>
         <system_uuid></system_uuid>
-        <name></name>
-        <data_standard_version></data_standard_version>
-    </system>
-    <reported_by>
-        <reported_uuid></reported_uuid>
-        <name></name>
+        <system_name></system_name>
+        <data_standard_version>0.6</data_standard_version>
         <project_name></project_name>
         <website_url></website_url>
         <contact_name></contact_name>
         <contact_phone></contact_phone>
         <contact_email></contact_email>
-    </reported_by>
+    </system>
+    <!-- person element can appear many times in the document -->
+    <person>
+        <person_uuid></person_uuid>
+        <person_name></person_name>
+    </person>
+    <person>
+        <!-- ... -->
+    </person>
     <!-- report element can appear many times in the document -->
     <report>
 		<report_uuid></report_uuid>
 		<report_type></report_type>
-		<date_recorded>
-            <date></date>
-		</date_recorded>
+        <date_start></date_start>
+        <date_end></date_end>
         <location></location>
         <!-- device element can appear many times -->
 		<device>
@@ -29,10 +32,8 @@
             <device_model></device_model>
             <!-- device_status element can appear many times -->
 			<device_status>
-				<status_type></status_type><statue_term></statue_term>
-            </device_status>
-            <device_status>
-				<status_type></status_type><statue_value></statue_value>
+                <status_type></status_type>
+                <statue_value></statue_value>
             </device_status>
             <device_status>
                 <!-- ... -->
@@ -44,10 +45,8 @@
                 <substance_name></substance_name>
                 <!-- substance_status element can appear many times -->
                 <substance_status>
-                    <status_type></status_type><status_term></status_term>
-                </substance_status>
-                <substance_status>
-                    <status_type></status_type><status_value></status_value>
+                    <status_type></status_type>
+                    <status_value></status_value>
                 </substance_status>
                 <substance_status>
                     <!-- ... -->
@@ -67,16 +66,13 @@
             <scientific_name></scientific_name>
             <age></age>
             <sex></sex>
-            <count></count>
-            <target></target>
+            <count>1</count>
+            <target>true</target>
         </species>
         <species>
             <!-- ... -->
         </species>
-        <reported_by>
-            <reported_uuid></reported_uuid>
-            <name></name>
-        </reported_by>
+        <person_uuid></person_uuid>
     </report>
     <report>
         <!-- ... -->

@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="https://pf2050.co.nz" targetNamespace="https://pf2050.co.nz" version="0.5">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="https://pf2050.co.nz" targetNamespace="https://pf2050.co.nz" version="0.6">
 
 <xs:annotation>
-    <xs:appinfo>pf2050_data_standard.xsd v0.5</xs:appinfo>
-    <xs:documentation xml:lang="en">New Zealand Predator Free 2050 Data Standard.</xs:documentation>
+    <xs:appinfo>pf2050_data_standard.xsd v0.6</xs:appinfo>
+    <xs:documentation xml:lang="en">New Zealand Predator Free 2050 Predator Control Data Standard XML Schema.</xs:documentation>
 </xs:annotation>
 
 <xs:simpleType name="uuid_type">
@@ -30,22 +30,6 @@
         <xs:enumeration value="Arrival" />
 		<xs:enumeration value="Departure" />
 		<xs:enumeration value="Trigger Count" />
-	</xs:restriction>
-</xs:simpleType>
-
-<xs:simpleType name="device_status_term_type">
-	<xs:annotation>
-		<xs:documentation>
-			Defines the terms used to describe the state of a device used to catch or sense predators.
-            Recommend valid values are stored and accessible via cloud-based API.
-            The list included here for demonstration and discussion purposes only.
-		</xs:documentation>
-	</xs:annotation>
-	<xs:restriction base="xs:string">
-		<xs:enumeration value="Set" />
-		<xs:enumeration value="Not Set" />
-        <xs:enumeration value="Triggered" />
-        <xs:enumeration value="Damaged" />
 	</xs:restriction>
 </xs:simpleType>
 
@@ -82,55 +66,10 @@
 	</xs:restriction>
 </xs:simpleType>
 
-<xs:simpleType name="substance_status_term_type">
-	<xs:annotation>
-		<xs:documentation>
-            Defines the terms used to describe the state of a substance used to catch or sense predators.
-            Recommend valid values are stored and accessible via cloud-based API.
-            The list included here for demonstration and discussion purposes only.
-		</xs:documentation>
-	</xs:annotation>
-	<xs:restriction base="xs:string">
-        <xs:enumeration value="Gone" />
-        <xs:enumeration value="Bad" />
-        <xs:enumeration value="Intact" />
-        <xs:enumeration value="Partial" />
-        <xs:enumeration value="None" />
-        <xs:enumeration value="Replaced" />
-        <xs:enumeration value="Refreshed" />
-	</xs:restriction>
-</xs:simpleType>
-
-<xs:complexType name="reporter_type">
-	<xs:annotation>
-		<xs:documentation>
-            Collection of properties that describes the person or subsystem that published the dataset, file, or record-entry.
-            This element type can be used at the file (pf2050_data_standard element) level, or as child element of the report element.
-            When used as a child element of report, all optional elements should be omitted.
-		</xs:documentation>
-	</xs:annotation>
-	<xs:sequence>
-        <xs:element name="reporter_uuid" type="uuid_type" minOccurs="1" maxOccurs="1">
-            <xs:annotation>
-                <xs:documentation>
-                    Universally Unique Identifier (UUID) of the person or subsystem, that published the dataset, file, or record-entry.
-                    Once published, the value should not change for the given person or subsystem.
-                </xs:documentation>
-            </xs:annotation>
-        </xs:element>
-        <xs:element name="name" type="xs:string" minOccurs="0" maxOccurs="1" />
-        <xs:element name="project_name" type="xs:string" minOccurs="0" maxOccurs="1" />
-        <xs:element name="website_url" type="xs:string" minOccurs="0" maxOccurs="1" />
-        <xs:element name="contact_name" type="xs:string" minOccurs="0" maxOccurs="1" />
-        <xs:element name="contact_phone" type="xs:string" minOccurs="0" maxOccurs="1" />
-        <xs:element name="contact_email" type="xs:string" minOccurs="0" maxOccurs="1" />
-	</xs:sequence>
-</xs:complexType>
-
 <xs:element name="pf2050_data_standard">
     <xs:annotation>
 		<xs:documentation>
-			New Zealand Predator Free 2050 Data Standard.
+			New Zealand Predator Free 2050 Preadtor Control Data Standard XML Schema.
 		</xs:documentation>
 	</xs:annotation>
 	<xs:complexType>
@@ -151,7 +90,7 @@
                                 </xs:documentation>
                             </xs:annotation>
                         </xs:element>
-                        <xs:element name="name" type="xs:string" minOccurs="1" maxOccurs="1">
+                        <xs:element name="system_name" type="xs:string" minOccurs="0" maxOccurs="1">
                             <xs:annotation>
                                 <xs:documentation>
                                     Name of the person or subsystem that has published the dataset.
@@ -166,11 +105,30 @@
                                 </xs:documentation>
                             </xs:annotation>
                         </xs:element>
+                        <xs:element name="project_name" type="xs:string" minOccurs="0" maxOccurs="1" />
+                        <xs:element name="website_url" type="xs:string" minOccurs="0" maxOccurs="1" />
+                        <xs:element name="contact_name" type="xs:string" minOccurs="0" maxOccurs="1" />
+                        <xs:element name="contact_phone" type="xs:string" minOccurs="0" maxOccurs="1" />
+                        <xs:element name="contact_email" type="xs:string" minOccurs="0" maxOccurs="1" />
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
-            <xs:element name="reported_by" type="reporter_type" minOccurs="0" maxOccurs="1" />
-			<xs:element name="report" minOccurs="1" maxOccurs="unbounded">
+            <xs:element name="person" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="person_uuid" type="uuid_type" minOccurs="1" maxOccurs="1">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    Universally Unique Identifier (UUID) of the person, that captured the activity or event.
+                                    Once published, the value should not change for the given person.
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="person_name" type="xs:string" minOccurs="0" maxOccurs="1" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+			<xs:element name="report" minOccurs="0" maxOccurs="unbounded">
                 <xs:annotation>
                     <xs:documentation>
                         Collection of properties that describes an activity or event to catch or detect predators.
@@ -186,7 +144,7 @@
                                 </xs:documentation>
                             </xs:annotation>
                         </xs:element>
-                        <xs:element name="type" type="xs:string" minOccurs="1" maxOccurs="1">
+                        <xs:element name="report_type" type="xs:string" minOccurs="1" maxOccurs="1">
                             <xs:annotation>
                                 <xs:documentation>
                                     Defines the broad class of activity or event to catch or detect predators that took place.
@@ -202,23 +160,23 @@
                                 </xs:documentation>
                             </xs:annotation>
                         </xs:element>
-                        <xs:element name="date_recorded" minOccurs="1" maxOccurs="1">
+                        <xs:element name="date_start" type="xs:dateTime" minOccurs="1" maxOccurs="1">
                             <xs:annotation>
                                 <xs:documentation>
-                                    Collection of properties that describe the when the activity occurred. Choice of properties can describe a single point in time or a date range.
+                                    Describes the when the activity occurred or started.
+                                    Recommended best practice is to use a date that conforms to ISO 8601 and is in UTC.
                                 </xs:documentation>
                             </xs:annotation>
-                            <xs:complexType>
-                                <xs:choice>
-                                    <xs:element name="date" type="xs:dateTime" minOccurs="1" maxOccurs="1" />
-                                    <xs:sequence>
-                                        <xs:element name="date_start" type="xs:dateTime" minOccurs="1" maxOccurs="1" />
-                                        <xs:element name="date_end" type="xs:dateTime" minOccurs="1" maxOccurs="1" />
-                                    </xs:sequence>
-                                </xs:choice>
-                            </xs:complexType>
                         </xs:element>
-                        <xs:element name="location" type="xs:string" minOccurs="1" maxOccurs="1">
+                        <xs:element name="date_end" type="xs:dateTime" minOccurs="1" maxOccurs="1">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    Describes the when the activity finished. Can be the same as date_start.
+                                    Recommended best practice is to use a date that conforms to ISO 8601 and is in UTC.
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="location" type="xs:string" minOccurs="0" maxOccurs="1">
                             <xs:annotation>
                                 <xs:documentation>
                                     Describes the location where the activity or event to catch or detect predators took place.
@@ -238,7 +196,7 @@
                             </xs:annotation>
                             <xs:complexType>
                                 <xs:sequence>
-                                    <xs:element name="device_uuid" type="uuid_type"  minOccurs="1" maxOccurs="1" />
+                                    <xs:element name="device_uuid" type="uuid_type"  minOccurs="0" maxOccurs="1" />
                                     <xs:element name="device_type" type="xs:string" minOccurs="1" maxOccurs="1">
                                         <xs:annotation>
                                             <xs:documentation>
@@ -278,10 +236,18 @@
                                         <xs:complexType>
                                             <xs:sequence>
                                                 <xs:element name="status_type" type="device_status_type" minOccurs="1" maxOccurs="1" />
-                                                <xs:choice>
-                                                    <xs:element name="status_term" type="device_status_term_type"></xs:element>
-                                                    <xs:element name="status_value" type="xs:positiveInteger"></xs:element>
-                                                </xs:choice>
+                                                <xs:element name="status_value" minOccurs="1" maxOccurs="1">
+                                                    <xs:simpleType>
+                                                        <xs:union>
+                                                            <xs:simpleType>
+                                                                <xs:restriction base="xs:integer"/>
+                                                            </xs:simpleType>
+                                                            <xs:simpleType>
+                                                                <xs:restriction base="xs:string"/>
+                                                            </xs:simpleType>
+                                                        </xs:union>
+                                                    </xs:simpleType>
+                                                </xs:element>
                                             </xs:sequence>
                                         </xs:complexType>
                                     </xs:element>
@@ -301,7 +267,7 @@
                                                     </xs:annotation>
                                                 </xs:element>
                                                 <xs:element name="substance_id" type="xs:positiveInteger" minOccurs="1" maxOccurs="1" />
-                                                <xs:element name="substance_name" type="xs:string" minOccurs="1" maxOccurs="1">
+                                                <xs:element name="substance_name" type="xs:string" minOccurs="0" maxOccurs="1">
                                                     <xs:annotation>
                                                         <xs:documentation>
                                                             Recommend valid values are stored and published via cloud-based API.
@@ -326,10 +292,18 @@
                                                     <xs:complexType>
                                                         <xs:sequence>
                                                             <xs:element name="status_type" type="substance_status_type" minOccurs="1" maxOccurs="1" />
-                                                            <xs:choice>
-                                                                <xs:element name="status_term" type="substance_status_term_type"></xs:element>
-                                                                <xs:element name="status_value" type="xs:positiveInteger"></xs:element>
-                                                            </xs:choice>
+                                                            <xs:element name="status_value" minOccurs="1" maxOccurs="1">
+                                                                <xs:simpleType>
+                                                                    <xs:union>
+                                                                        <xs:simpleType>
+                                                                            <xs:restriction base="xs:integer"/>
+                                                                        </xs:simpleType>
+                                                                        <xs:simpleType>
+                                                                            <xs:restriction base="xs:string"/>
+                                                                        </xs:simpleType>
+                                                                    </xs:union>
+                                                                </xs:simpleType>
+                                                            </xs:element>
                                                         </xs:sequence>
                                                     </xs:complexType>
                                                 </xs:element>
@@ -348,7 +322,7 @@
                             <xs:complexType>
                                 <xs:sequence>
                                     <xs:element name="species_id" type="xs:positiveInteger" minOccurs="1" maxOccurs="1" />
-                                    <xs:element name="common_name" type="xs:string" minOccurs="1" maxOccurs="1">
+                                    <xs:element name="common_name" type="xs:string" minOccurs="0" maxOccurs="1">
                                         <xs:annotation>
                                             <xs:documentation>
                                                 The species list will comprise of a subset of species listed from the NZOR (http://www.nzor.org.nz/) and include all predator species.
@@ -386,7 +360,14 @@
                                 </xs:sequence>
                             </xs:complexType>
                         </xs:element>
-                        <xs:element name="reported_by" type="reporter_type" minOccurs="0" maxOccurs="1"/>
+                        <xs:element name="person_uuid" type="uuid_type" minOccurs="0" maxOccurs="1">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    Universally Unique Identifier (UUID) of the person, that captured the activity or event.
+                                    Once published, the value should not change for the given person.
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>

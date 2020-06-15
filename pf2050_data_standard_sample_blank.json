@@ -2,26 +2,26 @@
 	"pf2050_data_standard" : {
         "system" : {
             "system_uuid" : "",
-            "name" : "",
-            "data_standard_version" : ""
-        },
-        "reported_by" : {
-            "reporter_uuid" : "",
-            "name" : "",
+            "system_name" : "",
+            "data_standard_version" : 0.6,
             "project_name" : "",
             "website_url" : "",
             "contact_name" : "",
             "contact_phone" : "",
             "contact_email" : ""
-
         },
+        "person" : [
+            {
+                "person_uuid" : "",
+                "person_name" : ""
+            }
+        ],
 		"report" : [
             {
                 "report_uuid" : "",
                 "report_type" : "",
-                "date_recorded" : {
-                    "date" : ""
-                },
+                "date_start" : "",
+                "date_end" : "",
                 "location" : "",
                 "device" : [
                     {
@@ -29,7 +29,6 @@
                         "device_type" : "",
                         "device_model" : "",
                         "device_status" : [
-                            { "status_type" : "", "status_term" : "" },
                             { "status_type" : "", "status_value" : "" }
                         ],
                         "substance" : [
@@ -38,7 +37,6 @@
                                 "substance_id" : "",
                                 "substance_name" : "",
                                 "substance_status" : [
-                                    { "status_type" : "", "status_term" : "" },
                                     { "status_type" : "", "status_value" : "" }
                                 ]
                             }
@@ -52,14 +50,11 @@
                         "scientific_name" : "",
                         "age" : "",
                         "sex" : "",
-                        "count" : "",
-                        "target": ""
+                        "count" : 1,
+                        "target": true
                     }
                 ],
-                "reported_by" : {
-                    "reported_uuid" : "",
-                    "name" : ""
-                }
+                "person_uuid" : ""
             }
         ]
 	}
