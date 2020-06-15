@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
-<pf2050_data_standard xmlns="https://pf2050.co.nz" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://pf2050.co.nz file:///C:/Dev/data-standard/pf2050_data_standard.xsd">
+<ns:pf2050_data_standard xmlns:ns="https://pf2050.co.nz" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://pf2050.co.nz pf2050_data_standard.xsd">
 	<system>
-        <system_uuid></system_uuid>
+        <system_uuid>aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee</system_uuid>
         <system_name></system_name>
         <data_standard_version>0.6</data_standard_version>
         <project_name></project_name>
@@ -12,72 +12,48 @@
     </system>
     <!-- person element can appear many times in the document -->
     <person>
-        <person_uuid></person_uuid>
+        <person_uuid>aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee</person_uuid>
         <person_name></person_name>
-    </person>
-    <person>
-        <!-- ... -->
     </person>
     <!-- report element can appear many times in the document -->
     <report>
-		<report_uuid></report_uuid>
+		<report_uuid>aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee</report_uuid>
 		<report_type></report_type>
-        <date_start></date_start>
-        <date_end></date_end>
+        <date_start>2000-01-01T00:00:00</date_start>
+        <date_end>2000-01-01T00:00:00</date_end>
         <location></location>
         <!-- device element can appear many times -->
 		<device>
-            <device_uuid></device_uuid>
+            <device_uuid>aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee</device_uuid>
 			<device_type></device_type>
             <device_model></device_model>
             <!-- device_status element can appear many times -->
 			<device_status>
-                <status_type></status_type>
-                <statue_value></statue_value>
-            </device_status>
-            <device_status>
-                <!-- ... -->
+                <status_type>Current</status_type>
+                <status_value></status_value>
             </device_status>
             <!-- substance element can appear many times -->
 			<substance>
-                <substance_type></substance_type>
-                <substance_id></substance_id>
+                <substance_type>Bait</substance_type>
+                <substance_id>1</substance_id>
                 <substance_name></substance_name>
                 <!-- substance_status element can appear many times -->
                 <substance_status>
-                    <status_type></status_type>
+                    <status_type>Arrival</status_type>
                     <status_value></status_value>
                 </substance_status>
-                <substance_status>
-                    <!-- ... -->
-                </substance_status>
             </substance>
-            <substance>
-                <!-- ... -->
-            </substance>
-        </device>
-        <device>
-            <!-- -->
         </device>
         <!-- species element can appear many times -->
         <species>
-            <species_id></species_id>
+            <species_id>1</species_id>
             <common_name></common_name>
             <scientific_name></scientific_name>
-            <age></age>
-            <sex></sex>
+            <age>Unknown</age>
+            <sex>Unknown</sex>
             <count>1</count>
             <target>true</target>
         </species>
-        <species>
-            <!-- ... -->
-        </species>
-        <person_uuid></person_uuid>
+        <person_uuid>aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee</person_uuid>
     </report>
-    <report>
-        <!-- ... -->
-    </report>
-    <report>
-        <!-- ... -->
-    </report>
-</pf2050_data_standard>
+</ns:pf2050_data_standard>

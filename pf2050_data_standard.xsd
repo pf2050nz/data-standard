@@ -8,39 +8,39 @@
 
 <xs:simpleType name="uuid_type">
     <xs:annotation>
-		<xs:documentation>
+        <xs:documentation>
             https://en.wikipedia.org/wiki/Universally_unique_identifier
         </xs:documentation>
-	</xs:annotation>
-	<xs:restriction base="xs:string">
-		<xs:pattern value="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}" />
-	</xs:restriction>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+        <xs:pattern value="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}" />
+    </xs:restriction>
 </xs:simpleType>
 
 <xs:simpleType name="device_status_type">
-	<xs:annotation>
-		<xs:documentation>
-			Defines the context of the status of a device used to catch or sense predators.
+    <xs:annotation>
+        <xs:documentation>
+            Defines the context of the status of a device used to catch or sense predators.
             Recommend valid values are stored and accessible via cloud-based API.
             The list included here for demonstration and discussion purposes only.
-		</xs:documentation>
-	</xs:annotation>
-	<xs:restriction base="xs:string">
+        </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
         <xs:enumeration value="Current" />
         <xs:enumeration value="Arrival" />
-		<xs:enumeration value="Departure" />
-		<xs:enumeration value="Trigger Count" />
-	</xs:restriction>
+        <xs:enumeration value="Departure" />
+        <xs:enumeration value="Trigger Count" />
+    </xs:restriction>
 </xs:simpleType>
 
 <xs:simpleType name="substance_type_type">
-	<xs:annotation>
-		<xs:documentation>
+    <xs:annotation>
+        <xs:documentation>
             Defines the broad class of substance used to catch or sense predators.
             Recommend valid values are stored and accessible via cloud-based API.
             The list included here for demonstration and discussion purposes only.
-		</xs:documentation>
-	</xs:annotation>
+        </xs:documentation>
+    </xs:annotation>
     <xs:restriction base="xs:string">
         <xs:enumeration value="Lure" />
         <xs:enumeration value="Bait" />
@@ -49,31 +49,31 @@
 </xs:simpleType>
 
 <xs:simpleType name="substance_status_type">
-	<xs:annotation>
-		<xs:documentation>
+    <xs:annotation>
+        <xs:documentation>
             Defines the context of the status of a substance used to catch or sense predators.
             Recommend valid values are stored and accessible via cloud-based API.
             The list included here for demonstration and discussion purposes only.
-		</xs:documentation>
-	</xs:annotation>
-	<xs:restriction base="xs:string">
+        </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
         <xs:enumeration value="Arrival" />
         <xs:enumeration value="Departure" />
         <xs:enumeration value="Grams Added" />
         <xs:enumeration value="Grams Removed" />
         <xs:enumeration value="Grams Remaining" />
         <xs:enumeration value="Grams Taken" />
-	</xs:restriction>
+    </xs:restriction>
 </xs:simpleType>
 
 <xs:element name="pf2050_data_standard">
     <xs:annotation>
-		<xs:documentation>
-			New Zealand Predator Free 2050 Preadtor Control Data Standard XML Schema.
-		</xs:documentation>
-	</xs:annotation>
-	<xs:complexType>
-		<xs:sequence>
+        <xs:documentation>
+            New Zealand Predator Free 2050 Preadtor Control Data Standard XML Schema.
+        </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+        <xs:sequence>
             <xs:element name="system" minOccurs="1" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation>
@@ -128,7 +128,7 @@
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
-			<xs:element name="report" minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="report" minOccurs="0" maxOccurs="unbounded">
                 <xs:annotation>
                     <xs:documentation>
                         Collection of properties that describes an activity or event to catch or detect predators.
@@ -371,8 +371,8 @@
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
-		</xs:sequence>
-	</xs:complexType>
+        </xs:sequence>
+    </xs:complexType>
 </xs:element>
 
 </xs:schema>

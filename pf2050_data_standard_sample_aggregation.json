@@ -1,11 +1,11 @@
 {
-	"pf2050_data_standard" : {
+    "pf2050_data_standard" : {
         "system" : {
             "system_uuid" : "a4fF5Fb3-9B8b-a9e1-aE66-4cacaDE2D193",
             "system_name" : "Some System",
             "data_standard_version" : 0.6
         },
-		"report" : [
+        "report" : [
             {
                 "report_uuid" : "C67d1bEF-DbCe-DB87-4DfB-90eb9d65D8F2",
                 "report_type" : "Catch",
@@ -46,5 +46,5 @@
                 ]
             }
         ]
-	}
+    }
 }

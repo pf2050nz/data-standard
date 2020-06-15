@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0"?>
-<ns:pf2050_data_standard xmlns:ns="https://pf2050.co.nz" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://pf2050.co.nz file:///C:/Dev/data-standard/pf2050_data_standard.xsd">
+<ns:pf2050_data_standard xmlns:ns="https://pf2050.co.nz" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://pf2050.co.nz pf2050_data_standard.xsd">
     <system>
         <system_uuid>152e11ac-b9fa-11e8-8d80-0220ed3bca7a</system_uuid>
         <system_name>Some System</system_name>
@@ -10,15 +10,15 @@
         <person_name>Geoff</person_name>
     </person>
     <report>
-		<report_uuid>252e11ac-b9fa-11e8-8d80-0220ed3bca7a</report_uuid>
-		<report_type>Visit</report_type>
+        <report_uuid>252e11ac-b9fa-11e8-8d80-0220ed3bca7a</report_uuid>
+        <report_type>Visit</report_type>
         <date_start>2019-06-05T14:10:15Z</date_start>
         <date_end>2019-06-05T14:10:15Z</date_end>
-		<location>POINT(-175.123456 35.123456)</location>
-		<device>
+        <location>POINT(-175.123456 35.123456)</location>
+        <device>
             <device_uuid>352e11ac-b9fa-11e8-8d80-0220ed3bca7a</device_uuid>
-			<device_type>Trap</device_type>
-			<device_model>DOC200</device_model>
+            <device_type>Trap</device_type>
+            <device_model>DOC200</device_model>
             <device_status>
                 <status_type>Arrival</status_type><status_value>Triggered</status_value>
             </device_status>
@@ -42,8 +42,8 @@
                     <status_type>Grams Added</status_type><status_value>28</status_value>
                 </substance_status>
             </substance>
-		</device>
-		<species>
+        </device>
+        <species>
             <species_id>789</species_id>
             <common_name>Rat</common_name>
             <age>Unknown</age>
@@ -51,6 +51,6 @@
             <count>1</count>
             <target>true</target>
         </species>
-		<person_uuid>e52e11ac-b9fa-11e8-8d80-0220ed3bca7a</person_uuid>
-	</report>
+        <person_uuid>e52e11ac-b9fa-11e8-8d80-0220ed3bca7a</person_uuid>
+    </report>
 </ns:pf2050_data_standard>

@@ -1,5 +1,5 @@
 {
-	"pf2050_data_standard" : {
+    "pf2050_data_standard" : {
         "system" : {
             "system_uuid" : "152e11ac-b9fa-11e8-8d80-0220ed3bca7a",
             "system_name" : "Some System",
@@ -55,5 +55,5 @@
                 "person_uuid" : "e52e11ac-b9fa-11e8-8d80-0220ed3bca7a"
             }
         ]
-	}
+    }
 }

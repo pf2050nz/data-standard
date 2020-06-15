@@ -1,140 +1,263 @@
-{
-    "$schema" : "http://json-schema.org/schema#",
-    "$id": "http://pf2050.co.nz/schemas/pf2050_data_standard_schema.json",
-    "title" : "New Zealand Predator Free 2050 Predator Control Data Standard JSON Schema",
-    "type" : "object",
-    "definitions" : {
-        "uuid" : {
-            "type" : "string",
-            "pattern" : "[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}"
-        }
-    },
-    "properties" : {
-        "pf2050_data_standard" : {
-                "type" : "object",
-                "properties" : {
-                    "system" : {
-                        "type" : "object",
+﻿{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "pf2050_data_standard_schema.json",
+    "title": "New Zealand Predator Free 2050 Predator Control Data Standard JSON Schema",
+    "version" : 0.6,
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+        "pf2050_data_standard": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "system": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                        "system_uuid": {
+                            "$ref": "#/definitions/uuid"
+                        },
+                        "system_name": {
+                            "type": "string"
+                        },
+                        "data_standard_version": {
+                            "type": "number"
+                        },
+                        "project_name": {
+                            "type": "string"
+                        },
+                        "website_url": {
+                            "type": "string"
+                        },
+                        "contact_name": {
+                            "type": "string"
+                        },
+                        "contact_phone": {
+                            "type": "string"
+                        },
+                        "contact_email": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "system_uuid"
+                    ]
+                },
+                "person": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
                         "properties": {
-                            "system_uuid" : { "$ref" : "#/definitions/uuid" },
-                            "system_name" : { "type" : "string" },
-                            "data_standard_version" : { "type" : "number" },
-                            "project_name" : { "type" : "string" },
-                            "website_url" : { "type" : "string" },
-                            "contact_name" : { "type" : "string" },
-                            "contact_phone" : { "type" : "string" },
-                            "contact_email" : { "type" : "string" }
-                        },
-                        "required" : ["system_uuid"],
-                        "additionalProperties": false
-                    },
-                    "person" : {
-                        "type" : "array",
-                        "items" : {
-                            "type" : "object",
-                            "properties": {
-                                "person_uuid" : { "$ref" : "#/definitions/uuid" },
-                                "person_name" : { "type" : "string" }
+                            "person_uuid": {
+                                "$ref": "#/definitions/uuid"
                             },
-                            "required": ["person_uuid"],
-                            "additionalProperties": false
+                            "person_name": {
+                                "type": "string"
+                            }
                         },
-                        "additionalItems": false
-                    },
-                    "report" : {
-                        "type" : "array",
-                        "items" : {
-                            "type" : "object",
-                            "properties": {
-                                "report_uuid" : { "$ref" : "#/definitions/uuid" },
-                                "report_type" : { "type" : "string" },
-                                "date_start" : { "type" : "string" },
-                                "date_end" : { "type" : "string" },
-                                "location" : { "type" : "string" },
-                                "device" : {
-                                    "type" : "array",
-                                    "items" : {
-                                        "type" : "object",
-                                        "properties" : {
-                                            "device_uuid" : { "$ref" : "#/definitions/uuid" },
-                                            "device_type" : { "type" : "string" },
-                                            "device_model" : { "type" : "string" },
-                                            "device_status" : {
-                                                "type" : "array",
-                                                "items" : {
-                                                    "type" : "object",
-                                                    "properties": {
-                                                        "status_type" : { "type" : "string", "enum" : ["Current", "Arrival", "Departure", "Trigger Count"] },
-                                                        "status_value" : { "type" : ["string","integer"] }
-                                                    },
-                                                    "required": ["status_type","status_value"],
-                                                    "additionalProperties": false
-                                                },
-                                                "additionalItems": false
-                                            },
-                                            "substance" : {
-                                                "type" : "array",
-                                                "items" : {
-                                                    "type" : "object",
-                                                    "properties": {
-                                                        "substance_type" : { "type" : "string", "enum": ["Bait", "Lure", "Pre Feed"] },
-                                                        "substance_id" : { "type" : "number" },
-                                                        "substance_name" : { "type" : "string" },
-                                                        "substance_status" : {
-                                                            "type" : "array",
-                                                            "items" : {
-                                                                "type" : "object",
-                                                                "properties": {
-                                                                    "status_type" : { "type" : "string", "enum" : ["Arrival", "Departure", "Grams Added", "Grams Removed", "Grams Remaining", "Grams Taken"] },
-                                                                    "status_value" : { "type" : ["string","integer"] }
-                                                                },
-                                                                "required": ["status_type", "status_value"],
-                                                                "additionalProperties": false
-                                                            },
-                                                            "additionalItems": false
-                                                        }
-                                                    },
-                                                    "required": ["substance_type", "substance_id"],
-                                                    "additionalProperties": false
-                                                },
-                                                "additionalItems": false
-                                            }
-                                        },
-                                        "required": ["device_type"],
-                                        "additionalProperties": false
-                                    },
-                                    "additionalItems": false
-                                },
-                                "species" : {
-                                    "type" : "array",
-                                    "items" : {
-                                        "type" : "object",
-                                        "properties": {
-                                            "species_id" : { "type" : "number" },
-                                            "common_name" : { "type" : "string" },
-                                            "scientific_name" : { "type" : "string" },
-                                            "age" : { "type" : "string", "enum" : ["Unknown", "Baby", "Juvenile", "Adult"] },
-                                            "sex" : { "type" : "string", "enum" : ["Unknown", "Male", "Female"] },
-                                            "count" : { "type" : "number", "minimum": 1 },
-                                            "target" : { "type" : "boolean" }
-                                        },
-                                        "required": ["species_id"],
-                                        "additionalProperties": false
-                                    },
-                                    "additionalItems": false
-                                },
-                                "person_uuid" : { "$ref" : "#/definitions/uuid" }
-                            },
-                            "required": ["report_uuid", "report_type", "date_start", "date_end"],
-                            "additionalProperties": false
-                        },
-                        "additionalItems" : false
+                        "required": [
+                            "person_uuid"
+                        ]
                     }
                 },
-                "required" : ["system"],
-                "additionalProperties": false
-            }
+                "report": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "report_uuid": {
+                                "$ref": "#/definitions/uuid"
+                            },
+                            "report_type": {
+                                "type": "string"
+                            },
+                            "date_start": {
+                                "type": "string"
+                            },
+                            "date_end": {
+                                "type": "string"
+                            },
+                            "location": {
+                                "type": "string"
+                            },
+                            "device": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "additionalProperties": false,
+                                    "properties": {
+                                        "device_uuid": {
+                                            "$ref": "#/definitions/uuid"
+                                        },
+                                        "device_type": {
+                                            "type": "string"
+                                        },
+                                        "device_model": {
+                                            "type": "string"
+                                        },
+                                        "device_status": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "additionalProperties": false,
+                                                "properties": {
+                                                    "status_type": {
+                                                        "type": "string",
+                                                        "enum": [
+                                                            "Current",
+                                                            "Arrival",
+                                                            "Departure",
+                                                            "Trigger Count"
+                                                        ]
+                                                    },
+                                                    "status_value": {
+                                                        "type": [
+                                                            "string",
+                                                            "integer"
+                                                        ]
+                                                    }
+                                                },
+                                                "required": [
+                                                    "status_type",
+                                                    "status_value"
+                                                ]
+                                            }
+                                        },
+                                        "substance": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "additionalProperties": false,
+                                                "properties": {
+                                                    "substance_type": {
+                                                        "type": "string",
+                                                        "enum": [
+                                                            "Bait",
+                                                            "Lure",
+                                                            "Pre Feed"
+                                                        ]
+                                                    },
+                                                    "substance_id": {
+                                                        "type": "number"
+                                                    },
+                                                    "substance_name": {
+                                                        "type": "string"
+                                                    },
+                                                    "substance_status": {
+                                                        "type": "array",
+                                                        "items": {
+                                                            "type": "object",
+                                                            "additionalProperties": false,
+                                                            "properties": {
+                                                                "status_type": {
+                                                                    "type": "string",
+                                                                    "enum": [
+                                                                        "Arrival",
+                                                                        "Departure",
+                                                                        "Grams Added",
+                                                                        "Grams Removed",
+                                                                        "Grams Remaining",
+                                                                        "Grams Taken"
+                                                                    ]
+                                                                },
+                                                                "status_value": {
+                                                                    "type": [
+                                                                        "string",
+                                                                        "integer"
+                                                                    ]
+                                                                }
+                                                            },
+                                                            "required": [
+                                                                "status_type",
+                                                                "status_value"
+                                                            ]
+                                                        }
+                                                    }
+                                                },
+                                                "required": [
+                                                    "substance_type",
+                                                    "substance_id"
+                                                ]
+                                            }
+                                        }
+                                    },
+                                    "required": [
+                                        "device_type"
+                                    ]
+                                }
+                            },
+                            "species": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "additionalProperties": false,
+                                    "properties": {
+                                        "species_id": {
+                                            "type": "number"
+                                        },
+                                        "common_name": {
+                                            "type": "string"
+                                        },
+                                        "scientific_name": {
+                                            "type": "string"
+                                        },
+                                        "age": {
+                                            "type": "string",
+                                            "enum": [
+                                                "Unknown",
+                                                "Baby",
+                                                "Juvenile",
+                                                "Adult"
+                                            ]
+                                        },
+                                        "sex": {
+                                            "type": "string",
+                                            "enum": [
+                                                "Unknown",
+                                                "Male",
+                                                "Female"
+                                            ]
+                                        },
+                                        "count": {
+                                            "type": "number",
+                                            "minimum": 1
+                                        },
+                                        "target": {
+                                            "type": "boolean"
+                                        }
+                                    },
+                                    "required": [
+                                        "species_id"
+                                    ]
+                                }
+                            },
+                            "person_uuid": {
+                                "$ref": "#/definitions/uuid"
+                            }
+                        },
+                        "required": [
+                            "report_uuid",
+                            "report_type",
+                            "date_start",
+                            "date_end"
+                        ]
+                    }
+                }
+            },
+            "required": [
+                "system"
+            ]
+        }
     },
-    "required": ["pf2050_data_standard"],
-    "additionalProperties": false
+    "required": [
+        "pf2050_data_standard"
+    ],
+    "definitions": {
+        "uuid": {
+            "type": "string",
+            "pattern": "[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}"
+        }
+    }
 }

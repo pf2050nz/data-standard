@@ -1,7 +1,7 @@
-{
-	"pf2050_data_standard" : {
+﻿{
+    "pf2050_data_standard" : {
         "system" : {
-            "system_uuid" : "",
+            "system_uuid": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee",
             "system_name" : "",
             "data_standard_version" : 0.6,
             "project_name" : "",
@@ -12,32 +12,32 @@
         },
         "person" : [
             {
-                "person_uuid" : "",
+                "person_uuid": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee",
                 "person_name" : ""
             }
         ],
-		"report" : [
+        "report" : [
             {
-                "report_uuid" : "",
+                "report_uuid": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee",
                 "report_type" : "",
                 "date_start" : "",
                 "date_end" : "",
                 "location" : "",
                 "device" : [
                     {
-                        "device_uuid" : "",
+                        "device_uuid": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee",
                         "device_type" : "",
                         "device_model" : "",
                         "device_status" : [
-                            { "status_type" : "", "status_value" : "" }
+                            { "status_type" : "Arrival", "status_value" : "" }
                         ],
                         "substance" : [
                             {
-                                "substance_type" : "",
-                                "substance_id" : "",
+                                "substance_type" : "Bait",
+                                "substance_id" : 1,
                                 "substance_name" : "",
                                 "substance_status" : [
-                                    { "status_type" : "", "status_value" : "" }
+                                    { "status_type" : "Arrival", "status_value" : "" }
                                 ]
                             }
                         ]
@@ -45,17 +45,17 @@
                 ],
                 "species" : [
                     {
-                        "species_id" : "",
+                        "species_id" : 1,
                         "common_name" : "",
                         "scientific_name" : "",
-                        "age" : "",
-                        "sex" : "",
+                        "age" : "Unknown",
+                        "sex" : "Unknown",
                         "count" : 1,
                         "target": true
                     }
                 ],
-                "person_uuid" : ""
+                "person_uuid": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee"
             }
         ]
-	}
+    }
 }
