@@ -3,7 +3,7 @@
         "system" : {
             "system_uuid" : "a4fF5Fb3-9B8b-a9e1-aE66-4cacaDE2D193",
             "system_name" : "Some System",
-            "data_standard_version" : 0.6
+            "data_standard_version" : 0.7
         },
         "report" : [
             {
@@ -14,9 +14,9 @@
                 "location" : "POLYGON(-109.0 -85.6, -109.0 -84.6, -110.0 -84.6, -109.0 -85.6)",
                 "device" : [
                     {
-                        "device_uuid" : "352e11ac-b9fa-11e8-8d80-0220ed3bca7a",
                         "device_type" : "Trap",
                         "device_model" : "DOC200",
+                        "device_count" : 20,
                         "substance" : [
                             {
                                 "substance_type" : "Bait",

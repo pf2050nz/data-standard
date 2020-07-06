@@ -3,7 +3,7 @@
         "system" : {
             "system_uuid" : "152e11ac-b9fa-11e8-8d80-0220ed3bca7a",
             "system_name" : "Some System",
-            "data_standard_version" : 0.6
+            "data_standard_version" : 0.7
         },
         "person" : [
             {
@@ -27,6 +27,7 @@
                             { "status_type" : "Arrival", "status_value" : "Triggered" },
                             { "status_type" : "Departure", "status_value" : "Set" }
                         ],
+                        "device_count" : 1,
                         "substance" : [
                             {
                                 "substance_type" : "Bait",

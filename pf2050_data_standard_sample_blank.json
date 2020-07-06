@@ -3,7 +3,7 @@
         "system" : {
             "system_uuid": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee",
             "system_name" : "",
-            "data_standard_version" : 0.6,
+            "data_standard_version" : 0.7,
             "project_name" : "",
             "website_url" : "",
             "contact_name" : "",
@@ -31,6 +31,7 @@
                         "device_status" : [
                             { "status_type" : "Arrival", "status_value" : "" }
                         ],
+                        "device_count" : 1,
                         "substance" : [
                             {
                                 "substance_type" : "Bait",

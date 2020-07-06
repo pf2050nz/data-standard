@@ -3,7 +3,7 @@
     <system>
         <system_uuid>152e11ac-b9fa-11e8-8d80-0220ed3bca7a</system_uuid>
         <system_name>Some System</system_name>
-        <data_standard_version>0.6</data_standard_version>
+        <data_standard_version>0.7</data_standard_version>
     </system>
     <person>
         <person_uuid>e52e11ac-b9fa-11e8-8d80-0220ed3bca7a</person_uuid>
@@ -25,6 +25,7 @@
             <device_status>
                 <status_type>Departure</status_type><status_value>Set</status_value>
             </device_status>
+            <device_count>1</device_count>
             <substance>
                 <substance_type>Bait</substance_type>
                 <substance_id>456</substance_id>

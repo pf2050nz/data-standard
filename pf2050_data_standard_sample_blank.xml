@@ -3,7 +3,7 @@
 	<system>
         <system_uuid>aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee</system_uuid>
         <system_name></system_name>
-        <data_standard_version>0.6</data_standard_version>
+        <data_standard_version>0.7</data_standard_version>
         <project_name></project_name>
         <website_url></website_url>
         <contact_name></contact_name>
@@ -32,6 +32,7 @@
                 <status_type>Current</status_type>
                 <status_value></status_value>
             </device_status>
+            <device_count>1</device_count>
             <!-- substance element can appear many times -->
 			<substance>
                 <substance_type>Bait</substance_type>

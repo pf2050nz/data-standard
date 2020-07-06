@@ -3,7 +3,7 @@
     <system>
         <system_uuid>a4fF5Fb3-9B8b-a9e1-aE66-4cacaDE2D193</system_uuid>
         <system_name>Some System</system_name>
-        <data_standard_version>0.6</data_standard_version>
+        <data_standard_version>0.7</data_standard_version>
     </system>
     <report>
         <report_uuid>C67d1bEF-DbCe-DB87-4DfB-90eb9d65D8F2</report_uuid>
@@ -12,9 +12,9 @@
         <date_end>2020-02-29T23:59:59Z</date_end>
         <location>POLYGON(-109.0 -85.6, -109.0 -84.6, -110.0 -84.6, -109.0 -85.6)</location>
         <device>
-            <device_uuid>352e11ac-b9fa-11e8-8d80-0220ed3bca7a</device_uuid>
             <device_type>Trap</device_type>
             <device_model>DOC200</device_model>
+            <device_count>20</device_count>
             <substance>
                 <substance_type>Bait</substance_type>
                 <substance_id>456</substance_id>

@@ -2,7 +2,7 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "pf2050_data_standard_schema.json",
     "title": "New Zealand Predator Free 2050 Predator Control Data Standard JSON Schema",
-    "version" : 0.6,
+    "version" : 0.7,
     "type": "object",
     "additionalProperties": false,
     "properties": {
@@ -124,6 +124,10 @@
                                                     "status_value"
                                                 ]
                                             }
+                                        },
+                                        "device_count": {
+                                            "type": "number",
+                                            "minimum": 1
                                         },
                                         "substance": {
                                             "type": "array",
