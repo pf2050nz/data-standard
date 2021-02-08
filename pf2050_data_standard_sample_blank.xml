@@ -3,7 +3,7 @@
 	<system>
         <system_uuid>aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee</system_uuid>
         <system_name></system_name>
-        <data_standard_version>0.7</data_standard_version>
+        <data_standard_version>0.8</data_standard_version>
         <project_name></project_name>
         <website_url></website_url>
         <contact_name></contact_name>
@@ -15,45 +15,62 @@
         <person_uuid>aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee</person_uuid>
         <person_name></person_name>
     </person>
+    <!-- location element can appear many times in the document -->
+    <location>
+        <location_uuid>aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee</location_uuid>
+        <location_wkt></location_wkt>
+    </location>
+    <!-- device element can appear many times in the document -->
+    <device>
+        <device_uuid>aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee</device_uuid>
+        <device_type></device_type>
+        <device_model></device_model>
+    </device>
+    <!-- substance element can appear many times in the document -->
+    <substance>
+        <substance_uuid>aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee</substance_uuid>
+        <substance_type>Bait</substance_type>
+        <substance_name></substance_name>
+    </substance>
+    <!-- species element can appear many times in the document -->
+    <species>
+        <species_uuid>aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee</species_uuid>
+        <species_common_name></species_common_name>
+        <species_scientific_name></species_scientific_name>
+    </species>
     <!-- report element can appear many times in the document -->
     <report>
 		<report_uuid>aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee</report_uuid>
 		<report_type></report_type>
         <date_start>2000-01-01T00:00:00</date_start>
         <date_end>2000-01-01T00:00:00</date_end>
-        <location></location>
+        <location_uuid>aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee</location_uuid>
         <!-- device element can appear many times -->
 		<device>
             <device_uuid>aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee</device_uuid>
-			<device_type></device_type>
-            <device_model></device_model>
-            <!-- device_status element can appear many times -->
+			<!-- device_status element can appear many times -->
 			<device_status>
                 <status_type>Current</status_type>
                 <status_value></status_value>
             </device_status>
             <device_count>1</device_count>
             <!-- substance element can appear many times -->
-			<substance>
-                <substance_type>Bait</substance_type>
-                <substance_id>1</substance_id>
-                <substance_name></substance_name>
-                <!-- substance_status element can appear many times -->
-                <substance_status>
-                    <status_type>Arrival</status_type>
-                    <status_value></status_value>
-                </substance_status>
-            </substance>
         </device>
+        <substance>
+            <substance_uuid>aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee</substance_uuid>
+            <!-- substance_status element can appear many times -->
+            <substance_status>
+                <status_type>Arrival</status_type>
+                <status_value></status_value>
+            </substance_status>
+        </substance>
         <!-- species element can appear many times -->
         <species>
-            <species_id>1</species_id>
-            <common_name></common_name>
-            <scientific_name></scientific_name>
-            <age>Unknown</age>
-            <sex>Unknown</sex>
-            <count>1</count>
-            <target>true</target>
+            <species_uuid>aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee</species_uuid>
+            <species_age>Unknown</species_age>
+            <species_sex>Unknown</species_sex>
+            <species_count>1</species_count>
+            <species_target>true</species_target>
         </species>
         <person_uuid>aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee</person_uuid>
     </report>

@@ -3,7 +3,7 @@
         "system" : {
             "system_uuid": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee",
             "system_name" : "",
-            "data_standard_version" : 0.7,
+            "data_standard_version" : 0.8,
             "project_name" : "",
             "website_url" : "",
             "contact_name" : "",
@@ -16,43 +16,65 @@
                 "person_name" : ""
             }
         ],
+        "location" : [
+            {
+                "location_uuid": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee",
+                "location_wkt" : ""
+            }
+        ],
+        "device" : [
+            {
+                "device_uuid": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee",
+                "device_type" : "",
+                "device_model" : ""
+            }
+        ],
+        "substance" : [
+            {
+                "substance_uuid" : "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee",
+                "substance_type" : "Bait",
+                "substance_name" : ""
+            }
+        ],
+        "species" : [
+            {
+                "species_uuid" : "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee",
+                "species_common_name" : "",
+                "species_scientific_name" : ""
+            }
+        ],
         "report" : [
             {
                 "report_uuid": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee",
                 "report_type" : "",
                 "date_start" : "",
                 "date_end" : "",
-                "location" : "",
+                "location_uuid" : "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee",
                 "device" : [
                     {
                         "device_uuid": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee",
-                        "device_type" : "",
-                        "device_model" : "",
                         "device_status" : [
                             { "status_type" : "Arrival", "status_value" : "" }
                         ],
-                        "device_count" : 1,
-                        "substance" : [
-                            {
-                                "substance_type" : "Bait",
-                                "substance_id" : 1,
-                                "substance_name" : "",
-                                "substance_status" : [
-                                    { "status_type" : "Arrival", "status_value" : "" }
-                                ]
-                            }
+                        "device_count" : 1
+
+                    }
+                ],
+                "substance" : [
+                    {
+                        "substance_uuid" : "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee",
+                        "substance_status" : [
+                            { "status_type" : "Arrival", "status_value" : "" }
                         ]
                     }
                 ],
                 "species" : [
                     {
-                        "species_id" : 1,
-                        "common_name" : "",
-                        "scientific_name" : "",
-                        "age" : "Unknown",
-                        "sex" : "Unknown",
-                        "count" : 1,
-                        "target": true
+                        "species_uuid" : "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee",
+                        "species_age" : "Unknown",
+                        "species_sex" : "Unknown",
+                        "species_count" : 1,
+                        "species_target": true
                     }
                 ],
                 "person_uuid": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee"

@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="https://pf2050.co.nz" targetNamespace="https://pf2050.co.nz" version="0.7">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="https://pf2050.co.nz" targetNamespace="https://pf2050.co.nz" version="0.8">
 
 <xs:annotation>
-    <xs:appinfo>pf2050_data_standard.xsd v0.7</xs:appinfo>
+    <xs:appinfo>pf2050_data_standard.xsd v0.8</xs:appinfo>
     <xs:documentation xml:lang="en">New Zealand Predator Free 2050 Predator Control Data Standard XML Schema.</xs:documentation>
 </xs:annotation>
 
@@ -128,6 +128,133 @@
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
+            <xs:element name="location" minOccurs="1" maxOccurs="unbounded">
+                <xs:annotation>
+                    <xs:documentation>
+                        Describes the location where the activity or event to catch or detect predators took place.
+                        Well-known text (WKT) representation of geometry. Refer https://www.ogc.org/standards/sfa
+                        All coordinates assumed WGS84 unless specified otherwise.
+                        It is recognized that in many circumstances sharing location information is sensitive.
+                        In these cases, care should be taken to obfuscate the actual location by reducing accuracy or using alternative, safe location data.
+                    </xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="location_uuid" type="uuid_type" minOccurs="1" maxOccurs="1" />
+                        <xs:element name="location_wkt" type="xs:string" minOccurs="1" maxOccurs="1" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="device" minOccurs="0" maxOccurs="unbounded">
+                <xs:annotation>
+                    <xs:documentation>
+                        Collection of properties that describes a predator control device.
+                        Examples of a device are Trap, Bait Station, or Telemetry Device.
+                    </xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="device_uuid" type="uuid_type"  minOccurs="0" maxOccurs="1" />
+                        <xs:element name="device_type" type="xs:string" minOccurs="1" maxOccurs="1">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    Defines the broad class of device used to catch or detect predators.
+                                    Recommend valid values are stored and published via cloud-based public API.
+                                    It is recognized that new devices will be developed over time and the cloud-based API may not provide for all devices in use.
+                                    The list included here for demonstration and discussion purposes only.
+                                    <!-- sample enumerations -->
+                                    <xs:enumeration value="Unspecified" />
+                                    <xs:enumeration value="Trap" />
+                                    <xs:enumeration value="Bait Station" />
+                                    <xs:enumeration value="Sensor" />
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="device_model" type="xs:string" minOccurs="0" maxOccurs="1">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    Defines the specific model of device used to catch or sense predators.
+                                    Recommend valid values are stored and published via cloud-based API.
+                                    It is recognized that new devices will be developed over time and the cloud-based API may not provide for all devices in use.
+                                    The list included here for demonstration and discussion purposes only.
+                                    <!-- sample enumerations -->
+                                    <xs:enumeration value="Unspecified" />
+                                    <xs:enumeration value="DOC200" />
+                                    <xs:enumeration value="Timms" />
+                                    <xs:enumeration value="Goodnature A24" />
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:element>                        
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="substance" minOccurs="0" maxOccurs="unbounded">
+                <xs:annotation>
+                    <xs:documentation>
+                        Describes substances (e.g. Baits, Lures and Pre-Feeds) used to catch or sense predators.
+                    </xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="substance_uuid" type="uuid_type" minOccurs="1" maxOccurs="1">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    Defines the class of substance used to catch or sense predators.    
+                                    Substance list stored and published via cloud-based API.
+                                    The list of values included here for demonstration and discussion purposes only.
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="substance_type" type="substance_type_type" minOccurs="1" maxOccurs="1">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    Defines the class of substance used to catch or sense predators.
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="substance_name" type="xs:string" minOccurs="0" maxOccurs="1">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    <!-- sample enumerations -->
+                                    <xs:enumeration value="Chicken Egg" />
+                                    <xs:enumeration value="Peanut Butter" />
+                                    <xs:enumeration value="Ditrac" />
+                                    <xs:enumeration value="Brodifacoum" />
+                                    <xs:enumeration value="Bromadiolone" />
+                                    <xs:enumeration value="Diphacinone" />
+                                    <xs:enumeration value="Pindone" />
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="species" minOccurs="0" maxOccurs="unbounded">
+                <xs:annotation>
+                    <xs:documentation>
+                        Collection of properties that describes the animal.
+                    </xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="species_uuid" type="uuid_type" minOccurs="1" maxOccurs="1" />
+                        <xs:element name="species_common_name" type="xs:string" minOccurs="0" maxOccurs="1">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    The species list will comprise of a subset of species listed from the NZOR (http://www.nzor.org.nz/) and include all predator species.
+                                    Recommend valid values are stored and published via cloud-based API.
+                                    Only a subset list is defined here for demonstration and discussion purposes.
+                                    <!-- sample enumerations -->
+                                    <xs:enumeration value="Unknown" />
+                                    <xs:enumeration value="Rat" />
+                                    <xs:enumeration value="Cat" />
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="species_scientific_name" type="xs:string" minOccurs="0" maxOccurs="1" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
             <xs:element name="report" minOccurs="0" maxOccurs="unbounded">
                 <xs:annotation>
                     <xs:documentation>
@@ -176,57 +303,16 @@
                                 </xs:documentation>
                             </xs:annotation>
                         </xs:element>
-                        <xs:element name="location" type="xs:string" minOccurs="0" maxOccurs="1">
-                            <xs:annotation>
-                                <xs:documentation>
-                                    Describes the location where the activity or event to catch or detect predators took place.
-                                    Well-known text (WKT) representation of geometry. Refer https://www.ogc.org/standards/sfa
-                                    All coordinates assumed WGS84 unless specified otherwise.
-                                    It is recognized that in many circumstances sharing location information is sensitive.
-                                    In these cases, care should be taken to obfuscate the actual location by reducing accuracy or using alternative, safe location data.
-                                </xs:documentation>
-                            </xs:annotation>
-                        </xs:element>
+                        <xs:element name="location_uuid" type="uuid_type" minOccurs="1" maxOccurs="1" />
                         <xs:element name="device" minOccurs="0" maxOccurs="unbounded">
                             <xs:annotation>
                                 <xs:documentation>
-                                    Collection of properties that describes the device present at the location and associated with the activity or event that took place.
-                                    Examples of a device are Trap, Bait Station, or Telemetry Device.
+                                    Collection of properties that describes the state of a device used to catch or detect predators.
                                 </xs:documentation>
                             </xs:annotation>
                             <xs:complexType>
                                 <xs:sequence>
-                                    <xs:element name="device_uuid" type="uuid_type"  minOccurs="0" maxOccurs="1" />
-                                    <xs:element name="device_type" type="xs:string" minOccurs="1" maxOccurs="1">
-                                        <xs:annotation>
-                                            <xs:documentation>
-                                                Defines the broad class of device used to catch or detect predators.
-                                                Recommend valid values are stored and published via cloud-based public API.
-                                                It is recognized that new devices will be developed over time and the cloud-based API may not provide for all devices in use.
-                                                The list included here for demonstration and discussion purposes only.
-                                                <!-- sample enumerations -->
-                                                <xs:enumeration value="Unspecified" />
-                                                <xs:enumeration value="Trap" />
-                                                <xs:enumeration value="Bait Station" />
-                                                <xs:enumeration value="Sensor" />
-                                            </xs:documentation>
-                                        </xs:annotation>
-                                    </xs:element>
-                                    <xs:element name="device_model" type="xs:string" minOccurs="0" maxOccurs="1">
-                                        <xs:annotation>
-                                            <xs:documentation>
-                                                Defines the specific model of device used to catch or sense predators.
-                                                Recommend valid values are stored and published via cloud-based API.
-                                                It is recognized that new devices will be developed over time and the cloud-based API may not provide for all devices in use.
-                                                The list included here for demonstration and discussion purposes only.
-                                                <!-- sample enumerations -->
-                                                <xs:enumeration value="Unspecified" />
-                                                <xs:enumeration value="DOC200" />
-                                                <xs:enumeration value="Timms" />
-                                                <xs:enumeration value="Goodnature A24" />
-                                            </xs:documentation>
-                                        </xs:annotation>
-                                    </xs:element>
+                                    <xs:element name="device_uuid" minOccurs="0" maxOccurs="unbounded" />
                                     <xs:element name="device_status" minOccurs="0" maxOccurs="unbounded">
                                         <xs:annotation>
                                             <xs:documentation>
@@ -252,61 +338,33 @@
                                         </xs:complexType>
                                     </xs:element>
                                     <xs:element name="device_count" type="xs:positiveInteger" minOccurs="0" maxOccurs="1" default="1" />
-                                    <xs:element name="substance" minOccurs="0" maxOccurs="unbounded">
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element name="substance" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="substance_uuid" minOccurs="0" maxOccurs="unbounded"></xs:element>
+                                    <xs:element name="substance_status" minOccurs="0" maxOccurs="unbounded">
                                         <xs:annotation>
                                             <xs:documentation>
-                                                Describes substances (e.g. Baits, Lures and Pre-Feeds) used to catch or sense predators.
+                                                Collection of properties that describes the state of a substance used to catch or detect predators.
                                             </xs:documentation>
                                         </xs:annotation>
                                         <xs:complexType>
                                             <xs:sequence>
-                                                <xs:element name="substance_type" type="substance_type_type" minOccurs="1" maxOccurs="1">
-                                                    <xs:annotation>
-                                                        <xs:documentation>
-                                                            Defines the class of substance used to catch or sense predators.
-                                                        </xs:documentation>
-                                                    </xs:annotation>
-                                                </xs:element>
-                                                <xs:element name="substance_id" type="xs:positiveInteger" minOccurs="1" maxOccurs="1" />
-                                                <xs:element name="substance_name" type="xs:string" minOccurs="0" maxOccurs="1">
-                                                    <xs:annotation>
-                                                        <xs:documentation>
-                                                            Recommend valid values are stored and published via cloud-based API.
-                                                            The list included here for demonstration and discussion purposes only.
-                                                            <!-- sample enumerations -->
-                                                            <xs:enumeration value="Chicken Egg" />
-                                                            <xs:enumeration value="Peanut Butter" />
-                                                            <xs:enumeration value="Ditrac" />
-                                                            <xs:enumeration value="Brodifacoum" />
-                                                            <xs:enumeration value="Bromadiolone" />
-                                                            <xs:enumeration value="Diphacinone" />
-                                                            <xs:enumeration value="Pindone" />
-                                                        </xs:documentation>
-                                                    </xs:annotation>
-                                                </xs:element>
-                                                <xs:element name="substance_status" minOccurs="0" maxOccurs="unbounded">
-                                                    <xs:annotation>
-                                                        <xs:documentation>
-                                                            Collection of properties that describes the state of a substance used to catch or detect predators.
-                                                        </xs:documentation>
-                                                    </xs:annotation>
-                                                    <xs:complexType>
-                                                        <xs:sequence>
-                                                            <xs:element name="status_type" type="substance_status_type" minOccurs="1" maxOccurs="1" />
-                                                            <xs:element name="status_value" minOccurs="1" maxOccurs="1">
-                                                                <xs:simpleType>
-                                                                    <xs:union memberTypes="xs:integer xs:string">
-                                                                        <xs:simpleType>
-                                                                            <xs:restriction base="xs:integer"/>
-                                                                        </xs:simpleType>
-                                                                        <xs:simpleType>
-                                                                            <xs:restriction base="xs:string"/>
-                                                                        </xs:simpleType>
-                                                                    </xs:union>
-                                                                </xs:simpleType>
-                                                            </xs:element>
-                                                        </xs:sequence>
-                                                    </xs:complexType>
+                                                <xs:element name="status_type" type="substance_status_type" minOccurs="1" maxOccurs="1" />
+                                                <xs:element name="status_value" minOccurs="1" maxOccurs="1">
+                                                    <xs:simpleType>
+                                                        <xs:union memberTypes="xs:integer xs:string">
+                                                            <xs:simpleType>
+                                                                <xs:restriction base="xs:integer"/>
+                                                            </xs:simpleType>
+                                                            <xs:simpleType>
+                                                                <xs:restriction base="xs:string"/>
+                                                            </xs:simpleType>
+                                                        </xs:union>
+                                                    </xs:simpleType>
                                                 </xs:element>
                                             </xs:sequence>
                                         </xs:complexType>
@@ -315,29 +373,10 @@
                             </xs:complexType>
                         </xs:element>
                         <xs:element name="species" minOccurs="0" maxOccurs="unbounded">
-                            <xs:annotation>
-                                <xs:documentation>
-                                    Collection of properties that describes the animal detected or caught at a location, during, or prior to, an activity or event.
-                                </xs:documentation>
-                            </xs:annotation>
                             <xs:complexType>
                                 <xs:sequence>
-                                    <xs:element name="species_id" type="xs:positiveInteger" minOccurs="1" maxOccurs="1" />
-                                    <xs:element name="common_name" type="xs:string" minOccurs="0" maxOccurs="1">
-                                        <xs:annotation>
-                                            <xs:documentation>
-                                                The species list will comprise of a subset of species listed from the NZOR (http://www.nzor.org.nz/) and include all predator species.
-                                                Recommend valid values are stored and published via cloud-based API.
-                                                Only a subset list is defined here for demonstration and discussion purposes.
-                                                <!-- sample enumerations -->
-                                                <xs:enumeration value="Unknown" />
-                                                <xs:enumeration value="Rat" />
-                                                <xs:enumeration value="Cat" />
-                                            </xs:documentation>
-                                        </xs:annotation>
-                                    </xs:element>
-                                    <xs:element name="scientific_name" type="xs:string" minOccurs="0" maxOccurs="1" />
-                                    <xs:element name="age" minOccurs="0" maxOccurs="1">
+                                    <xs:element name="species_uuid" type="uuid_type" minOccurs="1" maxOccurs="1" />
+                                    <xs:element name="species_age" minOccurs="0" maxOccurs="1">
                                         <xs:simpleType>
                                             <xs:restriction base="xs:string">
                                                 <xs:enumeration value="Unknown" />
@@ -347,7 +386,7 @@
                                             </xs:restriction>
                                         </xs:simpleType>
                                     </xs:element>
-                                    <xs:element name="sex" minOccurs="0" maxOccurs="1">
+                                    <xs:element name="species_sex" minOccurs="0" maxOccurs="1">
                                         <xs:simpleType>
                                             <xs:restriction base="xs:string">
                                                 <xs:enumeration value="Unknown" />
@@ -356,8 +395,8 @@
                                             </xs:restriction>
                                         </xs:simpleType>
                                     </xs:element>
-                                    <xs:element name="count" type="xs:positiveInteger" minOccurs="0" maxOccurs="1" default="1" />
-                                    <xs:element name="target" type="xs:boolean" minOccurs="0" maxOccurs="1" default="true" />
+                                    <xs:element name="species_count" type="xs:positiveInteger" minOccurs="0" maxOccurs="1" default="1" />
+                                    <xs:element name="species_target" type="xs:boolean" minOccurs="0" maxOccurs="1" default="true" />
                                 </xs:sequence>
                             </xs:complexType>
                         </xs:element>

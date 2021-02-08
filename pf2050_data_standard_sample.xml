@@ -3,22 +3,38 @@
     <system>
         <system_uuid>152e11ac-b9fa-11e8-8d80-0220ed3bca7a</system_uuid>
         <system_name>Some System</system_name>
-        <data_standard_version>0.7</data_standard_version>
+        <data_standard_version>0.8</data_standard_version>
     </system>
     <person>
         <person_uuid>e52e11ac-b9fa-11e8-8d80-0220ed3bca7a</person_uuid>
         <person_name>Geoff</person_name>
     </person>
+    <location>
+        <location_uuid>e52e11ac-b9fa-11e8-6565-0220ed3bca7a</location_uuid>
+        <location_wkt>(-175.123456 35.123456)</location_wkt>
+    </location>
+    <device>
+        <device_uuid>352e11ac-b9fa-11e8-8d80-0220ed3bca7a</device_uuid>
+        <device_type>Trap</device_type>
+        <device_model>DOC200</device_model>
+    </device>
+    <substance>
+        <substance_uuid>352e11ac-b9fa-11e8-8d80-0220ed3bca7a</substance_uuid>
+        <substance_type>Bait</substance_type>
+        <substance_name>Brodaficoum</substance_name>
+    </substance>
+    <species>
+        <species_uuid>352e11ac-b9fa-11e8-8d80-0220ed3bca7a</species_uuid>
+        <species_common_name>Rat</species_common_name>
+    </species>
     <report>
         <report_uuid>252e11ac-b9fa-11e8-8d80-0220ed3bca7a</report_uuid>
         <report_type>Visit</report_type>
         <date_start>2019-06-05T14:10:15Z</date_start>
         <date_end>2019-06-05T14:10:15Z</date_end>
-        <location>POINT(-175.123456 35.123456)</location>
+        <location_uuid>e52e11ac-b9fa-11e8-6565-0220ed3bca7a</location_uuid>
         <device>
             <device_uuid>352e11ac-b9fa-11e8-8d80-0220ed3bca7a</device_uuid>
-            <device_type>Trap</device_type>
-            <device_model>DOC200</device_model>
             <device_status>
                 <status_type>Arrival</status_type><status_value>Triggered</status_value>
             </device_status>
@@ -26,31 +42,28 @@
                 <status_type>Departure</status_type><status_value>Set</status_value>
             </device_status>
             <device_count>1</device_count>
-            <substance>
-                <substance_type>Bait</substance_type>
-                <substance_id>456</substance_id>
-                <substance_name>Brodaficoum</substance_name>
-                <substance_status>
-                    <status_type>Arrival</status_type><status_value>Gone</status_value>
-                </substance_status>
-                <substance_status>
-                    <status_type>Departure</status_type><status_value>Replaced</status_value>
-                </substance_status>
-                <substance_status>
-                    <status_type>Grams Taken</status_type><status_value>28</status_value>
-                </substance_status>
-                <substance_status>
-                    <status_type>Grams Added</status_type><status_value>28</status_value>
-                </substance_status>
-            </substance>
         </device>
+        <substance>
+            <substance_uuid>352e11ac-b9fa-11e8-8d80-0220ed3bca7a</substance_uuid>
+            <substance_status>
+                <status_type>Arrival</status_type><status_value>Gone</status_value>
+            </substance_status>
+            <substance_status>
+                <status_type>Departure</status_type><status_value>Replaced</status_value>
+            </substance_status>
+            <substance_status>
+                <status_type>Grams Taken</status_type><status_value>28</status_value>
+            </substance_status>
+            <substance_status>
+                <status_type>Grams Added</status_type><status_value>28</status_value>
+            </substance_status>
+        </substance>
         <species>
-            <species_id>789</species_id>
-            <common_name>Rat</common_name>
-            <age>Unknown</age>
-            <sex>Unknown</sex>
-            <count>1</count>
-            <target>true</target>
+            <species_uuid>352e11ac-b9fa-11e8-8d80-0220ed3bca7a</species_uuid>
+            <species_age>Unknown</species_age>
+            <species_sex>Unknown</species_sex>
+            <species_count>1</species_count>
+            <species_target>true</species_target>
         </species>
         <person_uuid>e52e11ac-b9fa-11e8-8d80-0220ed3bca7a</person_uuid>
     </report>

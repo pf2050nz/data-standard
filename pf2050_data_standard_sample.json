@@ -3,12 +3,38 @@
         "system" : {
             "system_uuid" : "152e11ac-b9fa-11e8-8d80-0220ed3bca7a",
             "system_name" : "Some System",
-            "data_standard_version" : 0.7
+            "data_standard_version" : 0.8
         },
         "person" : [
             {
                 "person_uuid" : "e52e11ac-b9fa-11e8-8d80-0220ed3bca7a",
                 "person_name" : "Geoff"
+            }
+        ],
+        "location" : [
+            {
+                "location_uud" : "e52e11ac-b9fa-11e8-6565-0220ed3bca7a",
+                "location_wkt": "POINT(-175.123456 35.123456)"
+            }
+        ],
+        "device" : [
+            {
+                "device_uuid" : "352e11ac-b9fa-11e8-8d80-0220ed3bca7a",
+                "device_type" : "Trap",
+                "device_model" : "DOC200"
+            }
+        ],
+        "substance" : [
+            {
+                "substance_uuid" : "352e11ac-b9fa-11e8-8d80-0220ed3bca7a",
+                "substance_type" : "Bait",
+                "substance_name" : "Brodaficoum"
+            }
+        ],
+        "species" : [
+            {
+                "species_uuid" : "352e11ac-b9fa-11e8-8d80-0220ed3bca7a",
+                "species_common_name" : "Rat"
             }
         ],
         "report" : [
@@ -17,40 +43,35 @@
                 "report_type" : "Visit",
                 "date_start" : "2019-06-05T14:10:15Z",
                 "date_end" : "2019-06-05T14:10:15Z",
-                "location" : "POINT(-175.123456 35.123456)",
+                "location_uud" : "e52e11ac-b9fa-11e8-6565-0220ed3bca7a",
                 "device" : [
                     {
                         "device_uuid" : "352e11ac-b9fa-11e8-8d80-0220ed3bca7a",
-                        "device_type" : "Trap",
-                        "device_model" : "DOC200",
                         "device_status" : [
                             { "status_type" : "Arrival", "status_value" : "Triggered" },
                             { "status_type" : "Departure", "status_value" : "Set" }
                         ],
-                        "device_count" : 1,
-                        "substance" : [
-                            {
-                                "substance_type" : "Bait",
-                                "substance_id" : 456,
-                                "substance_name" : "Brodaficoum",
-                                "substance_status" : [
-                                    { "status_type" : "Arrival", "status_value" : "Gone" },
-                                    { "status_type" : "Departure", "status_value" : "Replaced" },
-                                    { "status_type" : "Grams Taken", "status_value" : 28 },
-                                    { "status_type" : "Grams Added", "status_value" : 28 }
-                                ]
-                            }
+                        "device_count" : 1
+                    }
+                ],
+                "substance" : [
+                    {
+                        "substance_id" : "352e11ac-b9fa-11e8-8d80-0220ed3bca7a",
+                        "substance_status" : [
+                            { "status_type" : "Arrival", "status_value" : "Gone" },
+                            { "status_type" : "Departure", "status_value" : "Replaced" },
+                            { "status_type" : "Grams Taken", "status_value" : 28 },
+                            { "status_type" : "Grams Added", "status_value" : 28 }
                         ]
                     }
                 ],
                 "species" : [
                     {
-                        "species_id" : 789,
-                        "common_name" : "Rat",
-                        "age" : "Unknown",
-                        "sex" : "Unknown",
-                        "count" : 1,
-                        "target" : true
+                        "species_uuid" : "352e11ac-b9fa-11e8-8d80-0220ed3bca7a",
+                        "species_age" : "Unknown",
+                        "species_sex" : "Unknown",
+                        "species_count" : 1,
+                        "species_target" : true
                     }
                 ],
                 "person_uuid" : "e52e11ac-b9fa-11e8-8d80-0220ed3bca7a"

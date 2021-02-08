@@ -3,45 +3,71 @@
         "system" : {
             "system_uuid" : "a4fF5Fb3-9B8b-a9e1-aE66-4cacaDE2D193",
             "system_name" : "Some System",
-            "data_standard_version" : 0.7
+            "data_standard_version" : 0.8
         },
+        "location" : [
+            {
+                "location_uuid" : "a4fF5Fb3-9B8b-a9e2-aE66-4cacaDE2D193",
+                "location_wkt" : "POLYGON(-109.0 -85.6, -109.0 -84.6, -110.0 -84.6, -109.0 -85.6)"
+            }
+        ],
+        "device" : [
+            {
+                "device_uuid" : "b4fF5Fb3-9B8b-a9e2-aE66-4cacaDE2D193",
+                "device_type" : "Trap",
+                "device_model" : "DOC200"
+            }
+        ],
+        "substance" : [
+            {
+                "substance_uuid" : "a4fF5Fb3-9B8b-a9e2-aE66-4cacaDE2D193",
+                "substance_type" : "Bait",
+                "substance_name" : "Brodaficoum"
+            }
+        ],
+        "species" : [
+            {
+                "species_uuid" : "a4fF5Fb3-9B8b-a9e3-aE66-4cacaDE2D193",
+                "species_common_name" : "Rat"
+            },
+            {
+                "species_uuid" : "a4fF5Fb3-9B8b-a9e4-aE66-4cacaDE2D193",
+                "species_common_name" : "Ferret"
+            }
+        ],
         "report" : [
             {
                 "report_uuid" : "C67d1bEF-DbCe-DB87-4DfB-90eb9d65D8F2",
                 "report_type" : "Catch",
                 "date_start" : "2020-02-01T00:00:00Z",
                 "date_end" : "2020-02-29T23:59:59Z",
-                "location" : "POLYGON(-109.0 -85.6, -109.0 -84.6, -110.0 -84.6, -109.0 -85.6)",
+                "location_uuid" : "a4fF5Fb3-9B8b-a9e2-aE66-4cacaDE2D193",
                 "device" : [
                     {
-                        "device_type" : "Trap",
+                        "device_uuid" : "b4fF5Fb3-9B8b-a9e2-aE66-4cacaDE2D193",
                         "device_model" : "DOC200",
-                        "device_count" : 20,
-                        "substance" : [
-                            {
-                                "substance_type" : "Bait",
-                                "substance_id" : 456,
-                                "substance_name" : "Brodaficoum",
-                                "substance_status" : [
-                                    { "status_type" : "Grams Added", "status_value" : 2800 },
-                                    { "status_type" : "Grams Removed", "status_value" : 1400 }
-                                ]
-                            }
+                        "device_count" : 20
+                    }
+                ],
+                "substance" : [
+                    {
+                        "substance_uuid" : "a4fF5Fb3-9B8b-a9e2-aE66-4cacaDE2D193",
+                        "substance_status" : [
+                            { "status_type" : "Grams Added", "status_value" : 2800 },
+                            { "status_type" : "Grams Removed", "status_value" : 1400 }
                         ]
                     }
                 ],
                 "species" : [
                     {
-                        "species_id" : 789,
-                        "common_name" : "Rat",
-                        "count" : 56,
-                        "target" : true
+                        "species_uuid" : "a4fF5Fb3-9B8b-a9e3-aE66-4cacaDE2D193",
+                        "species_count" : 56,
+                        "species_target" : true
                     },
                     {
-                        "species_id" : 123,
-                        "common_name" : "Ferret",
-                        "count" : 17,
-                        "target" : true
+                        "species_uuid" : "a4fF5Fb3-9B8b-a9e4-aE66-4cacaDE2D193",
+                        "species_count" : 17,
+                        "species_target" : true
                     }
                 ]
             }

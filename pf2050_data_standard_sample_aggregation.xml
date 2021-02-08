@@ -3,41 +3,58 @@
     <system>
         <system_uuid>a4fF5Fb3-9B8b-a9e1-aE66-4cacaDE2D193</system_uuid>
         <system_name>Some System</system_name>
-        <data_standard_version>0.7</data_standard_version>
+        <data_standard_version>0.8</data_standard_version>
     </system>
+    <location>
+        <location_uuid>a4fF5Fb3-9B8b-a9e2-aE66-4cacaDE2D193</location_uuid>
+        <location_wkt>POLYGON(-109.0 -85.6, -109.0 -84.6, -110.0 -84.6, -109.0 -85.6)</location_wkt>
+    </location>
+    <device>
+        <device_uuid>b4fF5Fb3-9B8b-a9e2-aE66-4cacaDE2D193</device_uuid>
+        <device_type>Trap</device_type>
+        <device_model>DOC200</device_model>
+    </device>
+    <substance>
+        <substance_uuid>a4fF5Fb3-9B8b-a9e2-aE66-4cacaDE2D193</substance_uuid>
+        <substance_type>Bait</substance_type>
+        <substance_name>Brodaficoum</substance_name>
+    </substance>
+    <species>
+        <species_uuid>a4fF5Fb3-9B8b-a9e3-aE66-4cacaDE2D193</species_uuid>
+        <species_common_name>Rat</species_common_name>
+    </species>
+    <species>
+        <species_uuid>a4fF5Fb3-9B8b-a9e4-aE66-4cacaDE2D193</species_uuid>
+        <species_common_name>Ferret</species_common_name>
+    </species>
     <report>
         <report_uuid>C67d1bEF-DbCe-DB87-4DfB-90eb9d65D8F2</report_uuid>
         <report_type>Catch</report_type>
         <date_start>2020-02-01T00:00:00Z</date_start>
         <date_end>2020-02-29T23:59:59Z</date_end>
-        <location>POLYGON(-109.0 -85.6, -109.0 -84.6, -110.0 -84.6, -109.0 -85.6)</location>
+        <location_uuid>a4fF5Fb3-9B8b-a9e2-aE66-4cacaDE2D193</location_uuid>
         <device>
-            <device_type>Trap</device_type>
-            <device_model>DOC200</device_model>
+            <device_uuid>b4fF5Fb3-9B8b-a9e2-aE66-4cacaDE2D193</device_uuid>
             <device_count>20</device_count>
-            <substance>
-                <substance_type>Bait</substance_type>
-                <substance_id>456</substance_id>
-                <substance_name>Brodaficoum</substance_name>
-                <substance_status>
-                    <status_type>Grams Added</status_type><status_value>2800</status_value>
-                </substance_status>
-                <substance_status>
-                    <status_type>Grams Removed</status_type><status_value>1400</status_value>
-                </substance_status>
-            </substance>
         </device>
+        <substance>
+            <substance_uuid>a4fF5Fb3-9B8b-a9e2-aE66-4cacaDE2D193</substance_uuid>
+            <substance_status>
+                <status_type>Grams Added</status_type><status_value>2800</status_value>
+            </substance_status>
+            <substance_status>
+                <status_type>Grams Removed</status_type><status_value>1400</status_value>
+            </substance_status>
+        </substance>
         <species>
-            <species_id>789</species_id>
-            <common_name>Rat</common_name>
-            <count>56</count>
-            <target>true</target>
+            <species_uuid>a4fF5Fb3-9B8b-a9e3-aE66-4cacaDE2D193</species_uuid>
+            <species_count>56</species_count>
+            <species_target>true</species_target>
         </species>
         <species>
-            <species_id>123</species_id>
-            <common_name>Ferret</common_name>
-            <count>17</count>
-            <target>true</target>
+            <species_uuid>a4fF5Fb3-9B8b-a9e4-aE66-4cacaDE2D193</species_uuid>
+            <species_count>17</species_count>
+            <species_target>true</species_target>
         </species>
     </report>
 </ns:pf2050_data_standard>
