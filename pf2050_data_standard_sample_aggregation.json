@@ -3,7 +3,7 @@
         "system" : {
             "system_uuid" : "a4fF5Fb3-9B8b-a9e1-aE66-4cacaDE2D193",
             "system_name" : "Some System",
-            "data_standard_version" : 0.8
+            "data_standard_version" : 0.9
         },
         "location" : [
             {
@@ -11,11 +11,17 @@
                 "location_wkt" : "POLYGON(-109.0 -85.6, -109.0 -84.6, -110.0 -84.6, -109.0 -85.6)"
             }
         ],
+        "device_model" : [
+            {
+                "device_model_uuid" : "b4fF5Fb3-9B8b-a9e2-aE66-4cacaDE2D193",
+                "device_model_name" : "DOC200",
+                "device_model_type" : "Trap"
+            }
+        ],
         "device" : [
             {
                 "device_uuid" : "b4fF5Fb3-9B8b-a9e2-aE66-4cacaDE2D193",
-                "device_type" : "Trap",
-                "device_model" : "DOC200"
+                "device_model_uuid" : "b4fF5Fb3-9B8b-a9e2-aE66-4cacaDE2D193"
             }
         ],
         "substance" : [

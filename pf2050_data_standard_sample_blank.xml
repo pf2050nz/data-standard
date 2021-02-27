@@ -3,7 +3,7 @@
 	<system>
         <system_uuid>aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee</system_uuid>
         <system_name></system_name>
-        <data_standard_version>0.8</data_standard_version>
+        <data_standard_version>0.9</data_standard_version>
         <project_name></project_name>
         <website_url></website_url>
         <contact_name></contact_name>
@@ -20,11 +20,16 @@
         <location_uuid>aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee</location_uuid>
         <location_wkt></location_wkt>
     </location>
+    <!-- device_model element can appear many times in the document -->
+    <device_model>
+        <device_model_uuid>aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee</device_model_uuid>
+        <device_model_name></device_model_name>
+        <device_model_type></device_model_type>
+    </device_model>
     <!-- device element can appear many times in the document -->
     <device>
         <device_uuid>aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee</device_uuid>
-        <device_type></device_type>
-        <device_model></device_model>
+        <device_model_uuid>aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee</device_model_uuid>
     </device>
     <!-- substance element can appear many times in the document -->
     <substance>

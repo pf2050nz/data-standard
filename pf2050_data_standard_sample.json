@@ -3,7 +3,7 @@
         "system" : {
             "system_uuid" : "152e11ac-b9fa-11e8-8d80-0220ed3bca7a",
             "system_name" : "Some System",
-            "data_standard_version" : 0.8
+            "data_standard_version" : 0.9
         },
         "person" : [
             {
@@ -17,11 +17,17 @@
                 "location_wkt": "POINT(-175.123456 35.123456)"
             }
         ],
+        "device_model" : [
+            {
+                "device_model_uuid" : "352e11ac-b9fa-11e8-8d80-0220ed3bca7a",
+                "device_model_name" : "DOC200",
+                "device_model_type" : "Trap"                
+            }
+        ],
         "device" : [
             {
                 "device_uuid" : "352e11ac-b9fa-11e8-8d80-0220ed3bca7a",
-                "device_type" : "Trap",
-                "device_model" : "DOC200"
+                "device_model_uuid" : "352e11ac-b9fa-11e8-8d80-0220ed3bca7a"
             }
         ],
         "substance" : [

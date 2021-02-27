@@ -3,7 +3,7 @@
     <system>
         <system_uuid>152e11ac-b9fa-11e8-8d80-0220ed3bca7a</system_uuid>
         <system_name>Some System</system_name>
-        <data_standard_version>0.8</data_standard_version>
+        <data_standard_version>0.9</data_standard_version>
     </system>
     <person>
         <person_uuid>e52e11ac-b9fa-11e8-8d80-0220ed3bca7a</person_uuid>
@@ -11,12 +11,16 @@
     </person>
     <location>
         <location_uuid>e52e11ac-b9fa-11e8-6565-0220ed3bca7a</location_uuid>
-        <location_wkt>(-175.123456 35.123456)</location_wkt>
+        <location_wkt>POINT(-175.123456 35.123456)</location_wkt>
     </location>
+    <device_model>
+        <device_model_uuid>e52e11ac-b9fa-11e8-6565-0220ed3bca7b</device_model_uuid>
+        <device_model_name>DOC200</device_model_name>
+        <device_model_type>Trap</device_model_type>
+    </device_model>
     <device>
         <device_uuid>352e11ac-b9fa-11e8-8d80-0220ed3bca7a</device_uuid>
-        <device_type>Trap</device_type>
-        <device_model>DOC200</device_model>
+        <device_model_uuid>e52e11ac-b9fa-11e8-6565-0220ed3bca7b</device_model_uuid>
     </device>
     <substance>
         <substance_uuid>352e11ac-b9fa-11e8-8d80-0220ed3bca7a</substance_uuid>

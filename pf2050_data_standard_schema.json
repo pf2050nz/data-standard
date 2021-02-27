@@ -2,7 +2,7 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "pf2050_data_standard_schema.json",
     "title": "New Zealand Predator Free 2050 Predator Control Data Standard JSON Schema",
-    "version" : 0.8,
+    "version" : 0.9,
     "type": "object",
     "additionalProperties": false,
     "properties": {
@@ -40,7 +40,8 @@
                         }
                     },
                     "required": [
-                        "system_uuid"
+                        "system_uuid",
+                        "data_standard_version"
                     ]
                 },
                 "person": {
@@ -109,6 +110,27 @@
                         ]
                     }
                 },
+                "device_model": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "device_model_uuid": {
+                                "$ref": "#/definitions/uuid"
+                            },
+                            "device_model_name": {
+                                "type" : "string"
+                            },
+                            "device_model_type": {
+                                "type" : "string"
+                            }
+                        },
+                        "required": [
+                            "device_model_uuid"                            
+                        ]
+                    }
+                },
                 "device": {
                     "type": "array",
                     "items": {
@@ -118,16 +140,13 @@
                             "device_uuid": {
                                 "$ref": "#/definitions/uuid"
                             },
-                            "device_type": {
-                                "type": "string"
-                            },
-                            "device_model": {
-                                "type": "string"
+                            "device_model_uuid": {
+                                "$ref": "#/definitions/uuid"
                             }
                         },
                         "required": [
                             "device_uuid",
-                            "device_type"
+                            "device_model_type_uuid"
                         ]
                     }
                 },
@@ -145,8 +164,7 @@
                             }
                         },
                         "required": [
-                            "location_uuid",
-                            "location_wkt"
+                            "location_uuid"
                         ]
                     }
                 },
