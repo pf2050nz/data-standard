@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="https://pf2050.co.nz" targetNamespace="https://pf2050.co.nz" version="0.9">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="https://pf2050.co.nz" targetNamespace="https://pf2050.co.nz" version="0.10">
 
 <xs:annotation>
-    <xs:appinfo>pf2050_data_standard.xsd v0.9</xs:appinfo>
+    <xs:appinfo>pf2050_data_standard.xsd v0.10</xs:appinfo>
     <xs:documentation xml:lang="en">New Zealand Predator Free 2050 Predator Control Data Standard XML Schema.</xs:documentation>
 </xs:annotation>
 
@@ -66,6 +66,27 @@
     </xs:restriction>
 </xs:simpleType>
 
+<xs:complexType name="location_type">
+    <xs:annotation>
+        <xs:documentation>
+            Describes the location where the activity or event to catch or detect predators took place.
+        </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+        <xs:element name="location_uuid" type="uuid_type" minOccurs="0" maxOccurs="1" />
+        <xs:element name="location_wkt" type="xs:string" minOccurs="0" maxOccurs="1" />
+        <xs:annotation>
+            <xs:documentation>
+                Well-known text (WKT) representation of geometry. Refer https://www.ogc.org/standards/sfa
+                All coordinates assumed WGS84 unless specified otherwise.
+                It is recognized that in many circumstances sharing location information is sensitive.
+                In these cases, care should be taken to obfuscate the actual location by reducing accuracy or using alternative, safe location data.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:element name="location_attribute" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+</xs:complexType>
+
 <xs:element name="pf2050_data_standard">
     <xs:annotation>
         <xs:documentation>
@@ -97,7 +118,7 @@
                                 </xs:documentation>
                             </xs:annotation>
                         </xs:element>
-                        <xs:element name="data_standard_version" minOccurs="1" maxOccurs="1">
+                        <xs:element name="data_standard_version" type="xs:string" minOccurs="1" maxOccurs="1">
                             <xs:annotation>
                                 <xs:documentation>
                                     Version of the data standard.
@@ -128,32 +149,12 @@
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
-            <xs:element name="location" minOccurs="0" maxOccurs="unbounded">
-                <xs:annotation>
-                    <xs:documentation>
-                        Describes the location where the activity or event to catch or detect predators took place.
-                    </xs:documentation>
-                </xs:annotation>
-                <xs:complexType>
-                    <xs:sequence>
-                        <xs:element name="location_uuid" type="uuid_type" minOccurs="1" maxOccurs="1" />
-                        <xs:element name="location_wkt" type="xs:string" minOccurs="0" maxOccurs="1" />
-                        <xs:annotation>
-                            <xs:documentation>
-                                Well-known text (WKT) representation of geometry. Refer https://www.ogc.org/standards/sfa
-                                All coordinates assumed WGS84 unless specified otherwise.
-                                It is recognized that in many circumstances sharing location information is sensitive.
-                                In these cases, care should be taken to obfuscate the actual location by reducing accuracy or using alternative, safe location data.
-                            </xs:documentation>
-                        </xs:annotation>
-                    </xs:sequence>
-                </xs:complexType>
-            </xs:element>
+            <xs:element name="location" type="location_type" minOccurs="0" maxOccurs="unbounded" />
             <xs:element name="device_model" minOccurs="0" maxOccurs="1">
                 <xs:complexType>
                     <xs:sequence>
                         <xs:element name="device_model_uuid" type="uuid_type" minOccurs="1" maxOccurs="1" />
-                        <xs:element name="device_model_name" type="xs:string" minOccurs="0" maxOccurs="1">
+                        <xs:element name="device_model_name" type="xs:string" minOccurs="1" maxOccurs="1">
                             <xs:annotation>
                                 <xs:documentation>
                                     Defines the specific model of device used to catch or sense predators.
@@ -168,7 +169,7 @@
                                 </xs:documentation>
                             </xs:annotation>
                         </xs:element>
-                        <xs:element name="device_model_type" type="xs:string" minOccurs="0" maxOccurs="1">
+                        <xs:element name="device_model_type" type="xs:string" minOccurs="1" maxOccurs="1">
                             <xs:annotation>
                                 <xs:documentation>
                                     Defines the broad class of device used to catch or detect predators.
@@ -196,7 +197,7 @@
                 <xs:complexType>
                     <xs:sequence>
                         <xs:element name="device_uuid" type="uuid_type"  minOccurs="1" maxOccurs="1" />
-                        <xs:element name="device_model_uuid" type="uuid_type" minOccurs="0" maxOccurs="1" />
+                        <xs:element name="device_model_uuid" type="uuid_type" minOccurs="0" maxOccurs="unbounded" />
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
@@ -275,6 +276,7 @@
                 </xs:annotation>
                 <xs:complexType>
                     <xs:sequence>
+                        <xs:element name="data_standard_version" type="xs:string" minOccurs="0" maxOccurs="1" />
                         <xs:element name="report_uuid" type="uuid_type" minOccurs="1" maxOccurs="1">
                             <xs:annotation>
                                 <xs:documentation>
@@ -315,7 +317,7 @@
                                 </xs:documentation>
                             </xs:annotation>
                         </xs:element>
-                        <xs:element name="location_uuid" type="uuid_type" minOccurs="1" maxOccurs="1" />
+                        <xs:element name="location" type="location_type" minOccurs="0" maxOccurs="1" />
                         <xs:element name="device" minOccurs="0" maxOccurs="unbounded">
                             <xs:annotation>
                                 <xs:documentation>

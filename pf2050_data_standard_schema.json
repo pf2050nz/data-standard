@@ -2,7 +2,7 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "pf2050_data_standard_schema.json",
     "title": "New Zealand Predator Free 2050 Predator Control Data Standard JSON Schema",
-    "version" : 0.9,
+    "version" : 0.10,
     "type": "object",
     "additionalProperties": false,
     "properties": {
@@ -21,7 +21,7 @@
                             "type": "string"
                         },
                         "data_standard_version": {
-                            "type": "number"
+                            "type": "string"
                         },
                         "project_name": {
                             "type": "string"
@@ -127,7 +127,9 @@
                             }
                         },
                         "required": [
-                            "device_model_uuid"                            
+                            "device_model_uuid",
+                            "device_model_name",
+                            "device_model_type"                            
                         ]
                     }
                 },
@@ -161,11 +163,14 @@
                             },
                             "location_wkt": {
                                 "type": "string"
+                            },
+                            "location_attribute": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
                             }
-                        },
-                        "required": [
-                            "location_uuid"
-                        ]
+                        }
                     }
                 },
                 "report": {
@@ -174,6 +179,9 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
+                            "data_standard_version": {
+                                "type": "string"
+                            },
                             "report_uuid": {
                                 "$ref": "#/definitions/uuid"
                             },
@@ -186,8 +194,26 @@
                             "date_end": {
                                 "type": "string"
                             },
-                            "location_uuid": {
-                                "$ref": "#/definitions/uuid"
+                            "location": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "additionalProperties": false,
+                                    "properties": {
+                                        "location_uuid": {
+                                            "$ref": "#/definitions/uuid"
+                                        },
+                                        "location_wkt": {
+                                            "type": "string"
+                                        },
+                                        "location_attribute": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "string"
+                                            }
+                                        }
+                                    }
+                                }
                             },
                             "device": {
                                 "type": "array",

@@ -3,7 +3,7 @@
         "system" : {
             "system_uuid" : "152e11ac-b9fa-11e8-8d80-0220ed3bca7a",
             "system_name" : "Some System",
-            "data_standard_version" : 0.9
+            "data_standard_version" : "0.10"
         },
         "person" : [
             {
@@ -14,7 +14,8 @@
         "location" : [
             {
                 "location_uud" : "e52e11ac-b9fa-11e8-6565-0220ed3bca7a",
-                "location_wkt": "POINT(-175.123456 35.123456)"
+                "location_wkt": "POINT(-175.123456 35.123456)",
+                "location_attribute": [ "On Tree" ]
             }
         ],
         "device_model" : [
@@ -45,11 +46,16 @@
         ],
         "report" : [
             {
+                "data_standard_version" : "0.10",
                 "report_uuid" : "252e11ac-b9fa-11e8-8d80-0220ed3bca7a",
                 "report_type" : "Visit",
                 "date_start" : "2019-06-05T14:10:15Z",
                 "date_end" : "2019-06-05T14:10:15Z",
-                "location_uud" : "e52e11ac-b9fa-11e8-6565-0220ed3bca7a",
+                "location" : {
+                    "location_uud" : "e52e11ac-b9fa-11e8-6565-0220ed3bca7a",
+                    "location_wkt": "POINT(-175.123456 35.123456)",
+                    "location_attribute": [ "On Tree" ]
+                },
                 "device" : [
                     {
                         "device_uuid" : "352e11ac-b9fa-11e8-8d80-0220ed3bca7a",

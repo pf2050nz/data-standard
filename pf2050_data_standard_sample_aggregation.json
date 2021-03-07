@@ -3,7 +3,7 @@
         "system" : {
             "system_uuid" : "a4fF5Fb3-9B8b-a9e1-aE66-4cacaDE2D193",
             "system_name" : "Some System",
-            "data_standard_version" : 0.9
+            "data_standard_version" : "0.10"
         },
         "location" : [
             {
@@ -43,11 +43,15 @@
         ],
         "report" : [
             {
+                "data_standard_version" : "0.10",
                 "report_uuid" : "C67d1bEF-DbCe-DB87-4DfB-90eb9d65D8F2",
                 "report_type" : "Catch",
                 "date_start" : "2020-02-01T00:00:00Z",
                 "date_end" : "2020-02-29T23:59:59Z",
-                "location_uuid" : "a4fF5Fb3-9B8b-a9e2-aE66-4cacaDE2D193",
+                "location" : {
+                    "location_uuid" : "a4fF5Fb3-9B8b-a9e2-aE66-4cacaDE2D193",
+                    "location_wkt" : "POLYGON(-109.0 -85.6, -109.0 -84.6, -110.0 -84.6, -109.0 -85.6)"
+                },
                 "device" : [
                     {
                         "device_uuid" : "b4fF5Fb3-9B8b-a9e2-aE66-4cacaDE2D193",

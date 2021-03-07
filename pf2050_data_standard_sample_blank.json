@@ -3,7 +3,7 @@
         "system" : {
             "system_uuid": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee",
             "system_name" : "",
-            "data_standard_version" : 0.9,
+            "data_standard_version" : "0.10",
             "project_name" : "",
             "website_url" : "",
             "contact_name" : "",
@@ -19,7 +19,8 @@
         "location" : [
             {
                 "location_uuid": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee",
-                "location_wkt" : ""
+                "location_wkt" : "",
+                "location_attribute": [""]
             }
         ],
         "device_model" : [
@@ -51,11 +52,16 @@
         ],
         "report" : [
             {
+                "data_standard_version" : "0.10",
                 "report_uuid": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee",
                 "report_type" : "",
                 "date_start" : "",
                 "date_end" : "",
-                "location_uuid" : "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee",
+                "location" : {
+                    "location_uuid": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee",
+                    "location_wkt" : "",
+                    "location_attribute": [""]
+                },
                 "device" : [
                     {
                         "device_uuid": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee",
