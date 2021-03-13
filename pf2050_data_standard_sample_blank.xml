@@ -3,7 +3,7 @@
 	<system>
         <system_uuid>aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee</system_uuid>
         <system_name></system_name>
-        <data_standard_version>0.10</data_standard_version>
+        <data_standard_version>0.11</data_standard_version>
         <project_name></project_name>
         <website_url></website_url>
         <contact_name></contact_name>
@@ -46,7 +46,7 @@
     </species>
     <!-- report element can appear many times in the document -->
     <report>
-        <data_standard_version>0.10</data_standard_version>
+        <data_standard_version>0.11</data_standard_version>
 		<report_uuid>aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee</report_uuid>
 		<report_type></report_type>
         <date_start>2000-01-01T00:00:00</date_start>
@@ -59,6 +59,7 @@
         <!-- device element can appear many times -->
 		<device>
             <device_uuid>aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee</device_uuid>
+            <device_model_uuid>aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee</device_model_uuid>
 			<!-- device_status element can appear many times -->
 			<device_status>
                 <status_type>Current</status_type>

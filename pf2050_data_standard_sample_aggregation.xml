@@ -3,7 +3,7 @@
     <system>
         <system_uuid>a4fF5Fb3-9B8b-a9e1-aE66-4cacaDE2D193</system_uuid>
         <system_name>Some System</system_name>
-        <data_standard_version>0.10</data_standard_version>
+        <data_standard_version>0.11</data_standard_version>
     </system>
     <location>
         <location_uuid>a4fF5Fb3-9B8b-a9e2-aE66-4cacaDE2D193</location_uuid>
@@ -32,7 +32,7 @@
         <species_common_name>Ferret</species_common_name>
     </species>
     <report>
-        <data_standard_version>0.10</data_standard_version>
+        <data_standard_version>0.11</data_standard_version>
         <report_uuid>C67d1bEF-DbCe-DB87-4DfB-90eb9d65D8F2</report_uuid>
         <report_type>Catch</report_type>
         <date_start>2020-02-01T00:00:00Z</date_start>

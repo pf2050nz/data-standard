@@ -2,7 +2,7 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "pf2050_data_standard_schema.json",
     "title": "New Zealand Predator Free 2050 Predator Control Data Standard JSON Schema",
-    "version" : 0.10,
+    "version" : 0.11,
     "type": "object",
     "additionalProperties": false,
     "properties": {
@@ -212,7 +212,19 @@
                                                 "type": "string"
                                             }
                                         }
-                                    }
+                                    },
+                                    "oneOf" : [
+                                        {    
+                                            "required": [
+                                                "location_uuid"
+                                            ]
+                                        },
+                                        {
+                                            "required" : [
+                                                "location_wkt"
+                                            ]
+                                        }
+                                    ]
                                 }
                             },
                             "device": {
@@ -222,6 +234,9 @@
                                     "additionalProperties": false,
                                     "properties": {
                                         "device_uuid": {
+                                            "$ref": "#/definitions/uuid"
+                                        },
+                                        "device_model_uuid": {
                                             "$ref": "#/definitions/uuid"
                                         },
                                         "device_status": {
@@ -257,8 +272,17 @@
                                             "minimum": 1
                                         }
                                     },
-                                    "required": [
-                                        "device_uuid"
+                                    "oneOf" : [
+                                        {    
+                                            "required": [
+                                                "device_uuid"
+                                            ]
+                                        },
+                                        {
+                                            "required" : [
+                                                "device_model_uuid"
+                                            ]
+                                        }
                                     ]
                                 }
                             },

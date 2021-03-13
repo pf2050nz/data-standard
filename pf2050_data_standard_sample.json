@@ -3,7 +3,7 @@
         "system" : {
             "system_uuid" : "152e11ac-b9fa-11e8-8d80-0220ed3bca7a",
             "system_name" : "Some System",
-            "data_standard_version" : "0.10"
+            "data_standard_version" : "0.11"
         },
         "person" : [
             {
@@ -46,7 +46,7 @@
         ],
         "report" : [
             {
-                "data_standard_version" : "0.10",
+                "data_standard_version" : "0.11",
                 "report_uuid" : "252e11ac-b9fa-11e8-8d80-0220ed3bca7a",
                 "report_type" : "Visit",
                 "date_start" : "2019-06-05T14:10:15Z",
@@ -59,6 +59,7 @@
                 "device" : [
                     {
                         "device_uuid" : "352e11ac-b9fa-11e8-8d80-0220ed3bca7a",
+                        "device_model_uuid" : "352e11ac-b9fa-11e8-8d80-0220ed3bca7a",
                         "device_status" : [
                             { "status_type" : "Arrival", "status_value" : "Triggered" },
                             { "status_type" : "Departure", "status_value" : "Set" }

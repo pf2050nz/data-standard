@@ -3,7 +3,7 @@
         "system" : {
             "system_uuid": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee",
             "system_name" : "",
-            "data_standard_version" : "0.10",
+            "data_standard_version" : "0.11",
             "project_name" : "",
             "website_url" : "",
             "contact_name" : "",
@@ -52,7 +52,7 @@
         ],
         "report" : [
             {
-                "data_standard_version" : "0.10",
+                "data_standard_version" : "0.11",
                 "report_uuid": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee",
                 "report_type" : "",
                 "date_start" : "",
@@ -65,6 +65,7 @@
                 "device" : [
                     {
                         "device_uuid": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee",
+                        "device_model_uuid": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee",
                         "device_status" : [
                             { "status_type" : "Arrival", "status_value" : "" }
                         ],

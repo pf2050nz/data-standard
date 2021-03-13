@@ -3,7 +3,7 @@
     <system>
         <system_uuid>152e11ac-b9fa-11e8-8d80-0220ed3bca7a</system_uuid>
         <system_name>Some System</system_name>
-        <data_standard_version>0.10</data_standard_version>
+        <data_standard_version>0.11</data_standard_version>
     </system>
     <person>
         <person_uuid>e52e11ac-b9fa-11e8-8d80-0220ed3bca7a</person_uuid>
@@ -12,7 +12,7 @@
     <location>
         <location_uuid>e52e11ac-b9fa-11e8-6565-0220ed3bca7a</location_uuid>
         <location_wkt>POINT(-175.123456 35.123456)</location_wkt>
-        <location_attributte>On Tree</location_attribute>
+        <location_attribute>On Tree</location_attribute>
     </location>
     <device_model>
         <device_model_uuid>e52e11ac-b9fa-11e8-6565-0220ed3bca7b</device_model_uuid>
@@ -33,7 +33,7 @@
         <species_common_name>Rat</species_common_name>
     </species>
     <report>
-        <data_standard_version>0.10</data_standard_version>
+        <data_standard_version>0.11</data_standard_version>
         <report_uuid>252e11ac-b9fa-11e8-8d80-0220ed3bca7a</report_uuid>
         <report_type>Visit</report_type>
         <date_start>2019-06-05T14:10:15Z</date_start>
@@ -45,6 +45,7 @@
         </location>
         <device>
             <device_uuid>352e11ac-b9fa-11e8-8d80-0220ed3bca7a</device_uuid>
+            <device_model_uuid>e52e11ac-b9fa-11e8-6565-0220ed3bca7b</device_model_uuid>
             <device_status>
                 <status_type>Arrival</status_type><status_value>Triggered</status_value>
             </device_status>
